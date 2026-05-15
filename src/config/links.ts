@@ -1,7 +1,7 @@
 export const siteUrl = 'https://rowstocrm.com';
 export const contactEmail = 'hello@rowstocrm.com';
 export const privacyEmail = 'privacy@rowstocrm.com';
-export const demoBookingUrl = 'https://zcal.co/rowstocrm/rowstocrm';
+export const demoBookingUrl = 'https://zcal.co/rowstocrm/demo';
 export const demoBookingFallbackUrl = `mailto:${contactEmail}?subject=RowsToCRM%20demo%20request`;
 export const bookingUrl = demoBookingUrl || demoBookingFallbackUrl;
 export const isExternalBookingUrl = bookingUrl.startsWith('http');

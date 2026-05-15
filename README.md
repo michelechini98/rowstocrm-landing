@@ -47,7 +47,7 @@ The same settings are included in `netlify.toml`.
 
 Replace these before publishing:
 
-- Demo booking URL: `https://zcal.co/rowstocrm/rowstocrm`.
+- Demo booking URL: `https://zcal.co/rowstocrm/demo`.
 - Cookie Policy URL: `/cookie-policy`.
 
 ## Notes
