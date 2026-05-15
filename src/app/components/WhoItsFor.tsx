@@ -41,6 +41,22 @@ export function WhoItsFor() {
             );
           })}
         </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          {[t.audience.bestFit, t.audience.notFit].map((group, index) => (
+            <div className={`rounded-2xl border p-5 sm:p-6 ${index === 0 ? 'border-emerald-100 bg-emerald-50' : 'border-slate-200 bg-white'}`} key={group.title}>
+              <h3 className="mb-4 text-xl font-bold text-slate-950">{group.title}</h3>
+              <ul className="space-y-3">
+                {group.bullets.map((item) => (
+                  <li className="flex gap-3 text-sm leading-relaxed text-slate-700" key={item}>
+                    <span className={index === 0 ? 'font-bold text-emerald-700' : 'font-bold text-slate-400'}>{index === 0 ? '✓' : '•'}</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

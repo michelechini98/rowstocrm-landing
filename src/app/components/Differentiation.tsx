@@ -65,6 +65,10 @@ export function Differentiation() {
             </ul>
           </div>
         </div>
+
+        <p className="mx-auto mt-8 max-w-4xl rounded-xl border border-emerald-100 bg-emerald-50 px-5 py-4 text-center text-sm leading-relaxed text-slate-700">
+          {t.comparison.note}
+        </p>
       </div>
     </section>
   );

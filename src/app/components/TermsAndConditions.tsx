@@ -63,8 +63,11 @@ const termsSections: TermsSection[] = [
   {
     title: '5. Setup e servizi professionali',
     body: [
-      'Il setup RowsToCRM può includere analisi del foglio, configurazione delle mappature, preparazione delle colonne di tracking, configurazione liste, collegamento aziende, eventi opzionali, controlli tecnici e test end-to-end.',
-      'Le attività incluse, i tempi, il prezzo e gli eventuali limiti operativi vengono confermati prima dell’avvio del lavoro. Progetti avanzati, migrazioni, personalizzazioni o supporto continuativo possono richiedere una valutazione separata.',
+      'RowsToCRM offre due pacchetti principali: Self-Setup Package, al prezzo di € 490 una tantum, e Guided Setup Package, al prezzo di € 690 una tantum.',
+      'Entrambi i pacchetti riguardano lo stesso workflow Google Sheets → Brevo. La differenza è il livello di supporto incluso, non il prodotto configurato.',
+      'Il Self-Setup Package include materiali, template, istruzioni e documentazione per configurare il workflow in autonomia. Non include installazione one-to-one, revisione personalizzata dello Sheet o formazione operatori.',
+      'Il Guided Setup Package include installazione guidata, configurazione insieme, test end-to-end e formazione one-to-one.',
+      'Le attività incluse, i tempi, il prezzo e gli eventuali limiti operativi vengono confermati prima dell’avvio del lavoro.',
     ],
   },
   {
@@ -85,6 +88,9 @@ const termsSections: TermsSection[] = [
     title: '8. Pagamenti, fatturazione e rimborsi',
     body: [
       'Prezzi, modalità di pagamento, scadenze e condizioni economiche vengono comunicati prima dell’avvio del servizio o indicati nella proposta commerciale applicabile.',
+      'Modifiche future, supporto continuativo, più workflow, più Sheet, più account Brevo o logiche custom avanzate possono essere quotati separatamente.',
+      'È possibile passare da Self-Setup a Guided Setup pagando la differenza, se confermato dal fornitore.',
+      'RowsToCRM non promette supporto illimitato, aggiornamenti gratuiti perpetui o risultati commerciali garantiti.',
       '[POLICY RIMBORSI]',
     ],
   },

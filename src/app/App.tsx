@@ -6,6 +6,7 @@ import { Differentiation } from './components/Differentiation';
 import { HowItWorks } from './components/HowItWorks';
 import { KeyCapabilities } from './components/KeyCapabilities';
 import { BeforeAfterTracking, MappingCanvas, RowJourney } from './components/ProductNarrative';
+import { AfterDemo, CompleteRecords, CtaStrip } from './components/MarketingSections';
 import { WhoItsFor } from './components/WhoItsFor';
 import { SetupPackage } from './components/SetupPackage';
 import { FAQ } from './components/FAQ';
@@ -21,14 +22,18 @@ function LandingPage() {
     <>
       <Hero />
       <Problem />
-      <Solution />
-      <RowJourney />
-      <MappingCanvas />
       <Differentiation />
+      <CtaStrip variant="comparison" />
+      <CompleteRecords />
+      <RowJourney />
+      <CtaStrip variant="journey" />
+      <Solution />
+      <MappingCanvas />
       <HowItWorks />
       <BeforeAfterTracking />
       <KeyCapabilities />
       <WhoItsFor />
+      <AfterDemo />
       <SetupPackage />
       <FAQ />
       <FinalCTA />

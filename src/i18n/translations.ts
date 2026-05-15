@@ -3,9 +3,9 @@ export type Language = 'en' | 'it';
 export const translations = {
   en: {
     seo: {
-      title: 'RowsToCRM - Google Sheets to Brevo Lead Intake',
+      title: 'RowsToCRM - Google Sheets Brevo Workflow for Marketing Teams',
       description:
-        'Turn Google Sheets, Forms or Jotform rows into structured Brevo leads with mapping, lists, companies, optional events and row-level sync tracking.',
+        'Google Sheets to Brevo workflow for creating Brevo contacts from Google Sheets, linking contacts to companies, assigning lists and tracking row status.',
     },
     nav: {
       aria: 'Primary navigation',
@@ -19,19 +19,23 @@ export const translations = {
     },
     cta: {
       primary: 'Book a 20-minute demo',
-      secondary: 'View setup package',
+      secondary: 'View setup packages',
       bookDemo: 'Book a demo',
+      fit: 'See if RowsToCRM fits your workflow',
+      reviewWorkflow: 'Review your Brevo workflow',
+      setupReview: 'Book a setup review',
+      selfSetupReview: 'Book self-setup review',
       demoAria: 'Book a 20-minute RowsToCRM demo',
     },
     hero: {
       eyebrow: 'Google Sheets add-on for Brevo users',
       title: 'Create Brevo contacts and companies from Google Sheets, without building automation workflows',
       subtitle:
-        'RowsToCRM helps you map spreadsheet columns, assign lists, link companies, send optional events and track every row directly from a guided Google Sheets sidebar.',
+        'RowsToCRM turns reviewed spreadsheet rows into complete Brevo records: contacts, companies, contact-company links, list assignments, optional events and row-level sync statuses — all from a guided Google Sheets sidebar.',
       bullets: [
         'Contact + company + linking in one row',
         'Guided sidebar inside Google Sheets',
-        'Row-level sync tracking and error recovery',
+        'Row-level sync tracking and safe retry',
       ],
     },
     mockup: {
@@ -71,7 +75,7 @@ export const translations = {
       processReadyRows: 'Process Ready Rows',
       readyMessage: 'Demo preview ready.',
       processingMessage: 'Processing ready rows in demo mode...',
-      processedMessage: 'Rows processed in demo mode.',
+      processedMessage: 'Sample rows processed.',
       savedMappings: 'Saved mappings',
       mappingLoaded: 'Import_GP mapping loaded',
       mappings: [
@@ -94,7 +98,7 @@ export const translations = {
         {
           icon: '📊',
           title: 'Fragile workflows',
-          description: 'Generic automation platforms require complex multi-step configurations that break easily',
+          description: 'Generic automation platforms require multi-step scenarios and scenario maintenance',
         },
         {
           icon: '🔍',
@@ -131,7 +135,7 @@ export const translations = {
     journey: {
       title: 'From one spreadsheet row to a complete Brevo record',
       subtitle:
-        'RowsToCRM makes the operational path visible: validate the row, create the records, link the company, assign the list and write the result back to the sheet.',
+        'RowsToCRM makes the operational path visible: validate the row, create the contact, create or update the company, link them, assign the list and write the result back to the Sheet.',
       sampleRow: 'Sample row',
       demoOnly: 'Demo data only',
       process: 'Process sample row',
@@ -158,41 +162,59 @@ export const translations = {
       ],
     },
     comparison: {
-      title: 'Built for Brevo lead intake, not generic automation',
+      title: 'Built for marketing operators, not automation builders',
       subtitle:
-        'Generic automation tools are useful when you only need to move data from one app to another. RowsToCRM is designed for the full lead intake workflow.',
+        'Zapier and Make are powerful when someone can build, test and maintain scenarios. RowsToCRM gives your marketing team a guided Brevo lead intake workflow directly inside Google Sheets.',
       genericTitle: 'Generic automation platforms',
       genericDiagramAria: 'Generic automation maze diagram',
       genericNodes: ['Sheet row', 'Contact', 'Formatter', 'Company', 'List', 'Retry'],
       genericBullets: [
-        'Require building multi-step workflows',
-        'Complex configuration for company linking',
-        'Limited row-level error visibility',
-        'Separate tools for monitoring and retry',
-        'Operators work outside the spreadsheet',
+        'Require scenario building',
+        'Need testing and maintenance',
+        'Company linking may require advanced setup',
+        'Row-level retry must be designed',
+        'Operators often work outside the spreadsheet',
       ],
       rowsTitle: 'RowsToCRM',
       rowsDiagramAria: 'RowsToCRM guided path diagram',
       rowsNodes: ['Sheet row', 'Validate fields', 'Create contact', 'Link company', 'Assign list', 'Write DONE'],
       rowsBullets: [
-        'Guided setup, no workflow building',
-        'Native contact-company mapping and linking',
-        'Row-level status tracking in the Sheet',
-        'Built-in error review and safe retry',
-        'Everything managed from the sidebar',
+        'Guided workflow inside Google Sheets',
+        'Built for Brevo lead intake',
+        'Contact + company + linking in one row',
+        'Row-level statuses in the Sheet',
+        'Error review and safe retry included',
       ],
+      note:
+        'Zapier and Make give you automation platforms. RowsToCRM gives you a purpose-built Brevo lead intake workflow, with optional one-to-one guidance to make your team autonomous.',
+    },
+    ctaStrip: {
+      comparison: {
+        title: 'Want a guided Brevo workflow without building scenarios?',
+        cta: 'Book a setup review',
+      },
+      journey: {
+        title: 'Want to review your Brevo workflow from the Sheet?',
+        cta: 'Review your Brevo workflow',
+      },
+    },
+    records: {
+      title: 'Not just contacts. Complete Brevo records.',
+      subtitle:
+        'RowsToCRM can create the contact, create or update the company, link the contact to the company, assign the contact to a Brevo list and write the processing result back to the Sheet.',
+      steps: ['Sheet row', 'Contact', 'Company', 'Link', 'List', 'DONE'],
     },
     howItWorks: {
       title: 'How it works',
-      subtitle: 'A straightforward workflow that takes you from raw spreadsheet data to structured Brevo records',
+      subtitle: 'A guided workflow that takes your reviewed spreadsheet rows to structured Brevo records.',
       steps: [
-        ['Open Sidebar', 'Launch the Brevo integration from your Google Sheet menu'],
-        ['Connect Brevo', 'Authenticate with your Brevo API key'],
-        ['Create Mapping', 'Map columns to contact fields, company fields, and lists'],
-        ['Create Tracking Columns', 'Add status, error, and timestamp columns'],
-        ['Run Checks', 'Validate your setup and integration health'],
-        ['Process Ready Rows', 'Sync prepared rows to Brevo with one click'],
-        ['Monitor Results', 'Review row-level statuses and retry failed rows'],
+        ['Open the sidebar', 'Start from the guided panel inside Google Sheets'],
+        ['Connect Brevo', 'Use your Brevo API key for the workflow'],
+        ['Map Sheet columns', 'Connect reviewed row fields to Brevo records'],
+        ['Create tracking columns', 'Prepare status, error and timestamp fields'],
+        ['Run checks', 'Validate the setup before processing'],
+        ['Process ready rows', 'Create complete Brevo records from prepared rows'],
+        ['Review results and retry errors', 'Use row-level statuses to fix and retry failed rows'],
       ],
     },
     tracking: {
@@ -241,50 +263,119 @@ export const translations = {
         ['Brevo consultants', 'Deliver turnkey lead intake setups that clients can operate independently'],
         ['Event and webinar teams', 'Process registration lists into Brevo with company enrichment and automation triggers'],
       ],
+      bestFit: {
+        title: 'Best fit',
+        bullets: [
+          'You use Brevo as your CRM or marketing platform.',
+          'Your leads arrive or are reviewed in Google Sheets.',
+          'You need contacts and companies, not just email addresses.',
+          'You want visible DONE / ERROR statuses per row.',
+          'Your marketing team should not maintain automation scenarios.',
+        ],
+      },
+      notFit: {
+        title: 'Not a fit if',
+        bullets: [
+          'You only import a CSV once a year.',
+          'You do not use Brevo.',
+          'You already have a stable Make or Zapier scenario maintained by a technical owner.',
+          'You need a full two-way sync platform.',
+        ],
+      },
     },
     setup: {
-      title: 'RowsToCRM Setup Package',
+      title: 'Choose how much guidance you need',
       subtitle:
-        'A guided setup to configure your Google Sheet, connect Brevo, map fields, prepare tracking columns and validate the workflow with an end-to-end test.',
-      included: "What's included",
-      includes: [
-        'Google Sheet preparation',
-        'Brevo API connection',
-        'Field mapping configuration',
-        'List configuration',
-        'Company linking setup',
-        'Optional event configuration',
-        'Sync tracking columns',
-        'Setup and integration checks',
-        'End-to-end smoke test',
-        'Operating guide',
+        'RowsToCRM is the same Google Sheets → Brevo workflow. Choose Self-Setup if you want to configure it independently, or Guided Setup if you want one-to-one installation and training.',
+      note: 'Same product. Different level of support.',
+      packages: [
+        {
+          title: 'RowsToCRM Self-Setup Package',
+          price: '€ 490',
+          priceNote: 'one-time',
+          label: 'For teams that want to configure the workflow independently',
+          included: 'Included',
+          features: [
+            'RowsToCRM setup package',
+            'Google Sheet template',
+            'Installation instructions',
+            'Brevo API configuration guide',
+            'Contact field mapping',
+            'Company field mapping',
+            'Contact-company linking',
+            'Brevo list assignment',
+            'Tracking columns',
+            'Row-level statuses: READY, PROCESSING, DONE, ERROR, SKIPPED',
+            'Documentation-based end-to-end test',
+            'Short operating guide',
+          ],
+          notIncluded: 'Does not include one-to-one installation, personalized Sheet review or operator training.',
+          cta: 'Book self-setup review',
+        },
+        {
+          title: 'RowsToCRM Guided Setup Package',
+          badge: 'Recommended',
+          price: '€ 690',
+          priceNote: 'one-time',
+          label: 'For teams that want guided installation and one-to-one training',
+          included: 'Everything in Self-Setup, plus',
+          features: [
+            'One-to-one guided installation',
+            'Google Sheet structure review',
+            'Workflow configuration together',
+            'Brevo field mapping validation',
+            'Contact-company linking validation',
+            'End-to-end test together',
+            'One-to-one training session',
+            'Operational Q&A during setup',
+          ],
+          cta: 'Book a 20-minute demo',
+        },
       ],
-      investment: 'Setup investment',
-      package: 'Standard setup package',
-      advanced: 'Advanced projects require review and custom pricing',
-      custom: 'Custom requirements, large-scale deployments or agency partnerships welcome',
+      notes: [
+        'No monthly RowsToCRM subscription is required for the configured workflow. Future changes, ongoing support, multiple Sheets, multiple Brevo accounts or advanced custom logic may be quoted separately.',
+        'Need help after choosing Self-Setup? You can upgrade to Guided Setup by paying the difference.',
+      ],
+    },
+    afterDemo: {
+      title: 'What happens after the demo?',
+      steps: [
+        'We review your Google Sheet and Brevo structure.',
+        'We confirm whether RowsToCRM is a fit.',
+        'You choose Self-Setup or Guided Setup.',
+        'We configure or guide the workflow.',
+        'You process your first test rows.',
+      ],
+      cta: 'Book a setup review',
     },
     faq: {
       title: 'Frequently asked questions',
       items: [
         [
           'Is RowsToCRM an official Google or Brevo product?',
-          'No. RowsToCRM is an independent setup that integrates with Google Sheets and Brevo. It is not affiliated with, endorsed by, or sponsored by Google or Brevo.',
-        ],
-        ['Do I need technical skills?', 'No advanced automation skills are required. The setup is guided and managed from Google Sheets through an intuitive sidebar interface.'],
-        [
-          'Does this replace generic automation tools?',
-          'Use generic automation tools when you only need simple app-to-app automation. RowsToCRM is designed specifically for Brevo lead intake workflows that require mapping, companies, lists, events, row status and recovery.',
+          'No. RowsToCRM is an independent product and is not affiliated with, endorsed by, or sponsored by Google or Brevo.',
         ],
         [
-          'Can it work with Jotform or Google Forms?',
-          'Yes, when leads are collected into a Google Sheet. RowsToCRM works with any data that arrives in Google Sheets, including form exports, event registrations, and partner lists.',
+          'Can RowsToCRM link Brevo contacts to companies?',
+          'Yes. RowsToCRM is designed to create or update Brevo companies and link contacts to companies as part of the same guided workflow.',
+        ],
+        [
+          'How is this different from Zapier or Make?',
+          'Zapier and Make are general automation platforms. RowsToCRM is purpose-built for Brevo lead intake from Google Sheets, including contact-company linking, list assignment, row-level statuses and safe retry inside the Sheet.',
+        ],
+        [
+          'What is the difference between Self-Setup and Guided Setup?',
+          'Both packages use the same RowsToCRM workflow. Self-Setup is for teams that want to configure it independently using documentation. Guided Setup includes one-to-one installation, configuration support and training.',
+        ],
+        [
+          'Do I need technical skills?',
+          'For Self-Setup, you should be comfortable following technical instructions, configuring an API key and working with Google Sheets. Guided Setup is designed for teams that want one-to-one help with installation, configuration and training.',
         ],
         [
           'What happens when a row fails?',
-          'The row status and error message help the operator review what went wrong, fix the data if needed, and retry the row safely without affecting successfully processed rows.',
+          'The row is marked with an ERROR status and a useful message. After reviewing or correcting the issue, you can retry failed rows without reprocessing the whole sheet.',
         ],
-        ['Can I process rows in bulk?', 'Yes. RowsToCRM supports both individual row processing and bulk operations, with clear status tracking for every row processed.'],
+        ['Can I process rows in bulk?', 'Yes. RowsToCRM is designed to process prepared rows from the Sheet while keeping row-level visibility on each result.'],
       ],
     },
     finalCta: {
@@ -312,7 +403,7 @@ export const translations = {
     seo: {
       title: 'RowsToCRM - Integrazione Google Sheets Brevo per Lead Intake',
       description:
-        'Importare lead da Google Sheets a Brevo: crea contatti Brevo, collega contatti e aziende, assegna liste e traccia ogni riga con RowsToCRM.',
+        'Integrazione Google Sheets Brevo per creare contatti Brevo da Google Sheets, collegare contatti e aziende Brevo e gestire lead Brevo da Google Sheets.',
     },
     nav: {
       aria: 'Navigazione principale',
@@ -326,19 +417,23 @@ export const translations = {
     },
     cta: {
       primary: 'Prenota una demo di 20 minuti',
-      secondary: 'Vedi il pacchetto di setup',
+      secondary: 'Vedi i pacchetti di setup',
       bookDemo: 'Prenota una demo',
+      fit: 'Verifica se RowsToCRM è adatto al tuo workflow',
+      reviewWorkflow: 'Analizza il tuo workflow Brevo',
+      setupReview: 'Prenota una valutazione setup',
+      selfSetupReview: 'Prenota una valutazione Self-Setup',
       demoAria: 'Prenota una demo RowsToCRM di 20 minuti',
     },
     hero: {
       eyebrow: 'Add-on Google Sheets per utenti Brevo',
       title: 'Crea contatti e aziende Brevo da Google Sheets, senza costruire workflow complessi',
       subtitle:
-        'RowsToCRM ti aiuta a mappare le colonne del foglio, assegnare liste, collegare aziende, inviare eventi opzionali e tracciare ogni riga direttamente da una sidebar guidata in Google Sheets.',
+        'RowsToCRM trasforma righe controllate in Google Sheets in record Brevo completi: contatti, aziende, collegamenti contatto-azienda, assegnazioni a liste, eventi opzionali e stati di sincronizzazione per riga — tutto da una sidebar guidata in Google Sheets.',
       bullets: [
         'Contatto + azienda + collegamento in una sola riga',
         'Sidebar guidata dentro Google Sheets',
-        'Tracking riga per riga e recupero errori',
+        'Tracking per riga e retry sicuro',
       ],
     },
     mockup: {
@@ -378,7 +473,7 @@ export const translations = {
       processReadyRows: 'Processa le righe pronte',
       readyMessage: 'Anteprima demo pronta.',
       processingMessage: 'Processamento righe pronte in modalità demo...',
-      processedMessage: 'Righe processate in modalità demo.',
+      processedMessage: 'Righe di esempio processate.',
       savedMappings: 'Mappature salvate',
       mappingLoaded: 'Mappatura Import_GP caricata',
       mappings: [
@@ -401,7 +496,7 @@ export const translations = {
         {
           icon: '📊',
           title: 'Workflow fragili',
-          description: 'Le piattaforme di automazione generiche richiedono configurazioni a più step, spesso difficili da mantenere',
+          description: 'Le piattaforme di automazione generiche richiedono scenari a più step e manutenzione degli scenari',
         },
         {
           icon: '🔍',
@@ -436,9 +531,9 @@ export const translations = {
       flow: ['Dati contatto -> contatto Brevo', 'Dati azienda -> azienda Brevo', 'Collegamento automatico contatto-azienda', 'Assegnazione lista + trigger evento'],
     },
     journey: {
-      title: 'Da una riga di spreadsheet a un record Brevo completo',
+      title: 'Da una riga del foglio a un record Brevo completo',
       subtitle:
-        'RowsToCRM rende visibile il percorso operativo: valida la riga, crea i record, collega l’azienda, assegna la lista e scrive il risultato nel foglio.',
+        'RowsToCRM rende visibile il percorso operativo: valida la riga, crea il contatto, crea o aggiorna l’azienda, li collega, assegna la lista e scrive il risultato nel foglio.',
       sampleRow: 'Riga di esempio',
       demoOnly: 'Solo dati demo',
       process: 'Processa riga di esempio',
@@ -465,41 +560,59 @@ export const translations = {
       ],
     },
     comparison: {
-      title: 'Creato per gestire lead Brevo, non per automazioni generiche',
+      title: 'Pensato per operatori marketing, non per automation builder',
       subtitle:
-        'Gli strumenti di automazione generici sono utili quando devi solo spostare dati da un’app all’altra. RowsToCRM è progettato per l’intero processo di acquisizione lead.',
+        'Zapier e Make sono potenti quando c’è qualcuno che sa costruire, testare e mantenere scenari. RowsToCRM dà al tuo team marketing un workflow guidato per gestire lead Brevo direttamente dentro Google Sheets.',
       genericTitle: 'Piattaforme di automazione generiche',
       genericDiagramAria: 'Diagramma a labirinto di automazione generica',
       genericNodes: ['Riga foglio', 'Contatto', 'Formattatore', 'Azienda', 'Lista', 'Ritenta'],
       genericBullets: [
-        'Richiedono la costruzione di workflow a più step',
-        'Configurazione complessa per collegare le aziende',
-        'Visibilità limitata sugli errori riga per riga',
-        'Strumenti separati per monitoraggio e retry',
-        'Gli operatori lavorano fuori dal foglio',
+        'Richiedono costruzione di scenari',
+        'Richiedono test e manutenzione',
+        'Il collegamento aziende può richiedere setup avanzato',
+        'Il retry per riga va progettato',
+        'Gli operatori lavorano spesso fuori dal foglio',
       ],
       rowsTitle: 'RowsToCRM',
       rowsDiagramAria: 'Diagramma del percorso guidato RowsToCRM',
       rowsNodes: ['Riga foglio', 'Valida campi', 'Crea contatto', 'Collega azienda', 'Assegna lista', 'Scrive DONE'],
       rowsBullets: [
-        'Setup guidato, senza costruire workflow',
-        'Mappatura e collegamento nativo tra contatti e aziende',
-        'Tracking dello stato direttamente nel foglio',
-        'Revisione errori integrata e retry sicuro',
-        'Tutto gestito dalla sidebar',
+        'Workflow guidato dentro Google Sheets',
+        'Pensato per lead intake Brevo',
+        'Contatto + azienda + collegamento in una riga',
+        'Stati per riga direttamente nel foglio',
+        'Revisione errori e retry sicuro inclusi',
       ],
+      note:
+        'Zapier e Make ti danno piattaforme di automazione. RowsToCRM ti dà un workflow lead intake Brevo verticale, con supporto one-to-one opzionale per rendere autonomo il tuo team.',
+    },
+    ctaStrip: {
+      comparison: {
+        title: 'Vuoi un workflow Brevo guidato senza costruire scenari?',
+        cta: 'Prenota una valutazione setup',
+      },
+      journey: {
+        title: 'Vuoi analizzare il tuo workflow Brevo dal foglio?',
+        cta: 'Analizza il tuo workflow Brevo',
+      },
+    },
+    records: {
+      title: 'Non solo contatti. Record Brevo completi.',
+      subtitle:
+        'RowsToCRM può creare il contatto, creare o aggiornare l’azienda, collegare il contatto all’azienda, assegnare il contatto a una lista Brevo e scrivere il risultato direttamente nel foglio.',
+      steps: ['Riga foglio', 'Contatto', 'Azienda', 'Link', 'Lista', 'DONE'],
     },
     howItWorks: {
       title: 'Come funziona',
-      subtitle: 'Un flusso semplice che trasforma dati grezzi da spreadsheet in record Brevo strutturati',
+      subtitle: 'Un workflow guidato che trasforma righe controllate in Google Sheets in record Brevo strutturati.',
       steps: [
-        ['Apri la sidebar', 'Avvia l’integrazione Brevo dal menu del tuo Google Sheet'],
-        ['Collega Brevo', 'Autenticati con la tua API key Brevo'],
-        ['Crea la mappatura', 'Mappa le colonne verso campi contatto, campi azienda e liste'],
-        ['Crea le colonne di tracking', 'Aggiungi colonne di stato, errore e timestamp'],
-        ['Esegui i controlli', 'Verifica configurazione e stato dell’integrazione'],
-        ['Processa le righe pronte', 'Sincronizza le righe preparate con Brevo in un clic'],
-        ['Monitora i risultati', 'Controlla gli stati riga per riga e ritenta le righe fallite'],
+        ['Apri la sidebar', 'Parti dal pannello guidato dentro Google Sheets'],
+        ['Collega Brevo', 'Usa la tua API key Brevo per il workflow'],
+        ['Mappa le colonne del foglio', 'Collega i campi delle righe controllate ai record Brevo'],
+        ['Crea le colonne di tracking', 'Prepara stato, errore e timestamp'],
+        ['Esegui i controlli', 'Valida il setup prima del processamento'],
+        ['Processa le righe pronte', 'Crea record Brevo completi dalle righe preparate'],
+        ['Controlla i risultati e ritenta gli errori', 'Usa gli stati per riga per correggere e ritentare le righe fallite'],
       ],
     },
     tracking: {
@@ -548,53 +661,119 @@ export const translations = {
         ['Consulenti Brevo', 'Fornisci setup lead intake chiavi in mano che i clienti possono gestire in autonomia'],
         ['Team eventi e webinar', 'Processa liste di registrazione in Brevo con dati aziendali e trigger di automazione'],
       ],
+      bestFit: {
+        title: 'Ideale se',
+        bullets: [
+          'Usi Brevo come CRM o piattaforma marketing.',
+          'I tuoi lead arrivano o vengono controllati in Google Sheets.',
+          'Hai bisogno di contatti e aziende, non solo indirizzi email.',
+          'Vuoi stati DONE / ERROR visibili per ogni riga.',
+          'Il tuo team marketing non dovrebbe mantenere scenari di automazione.',
+        ],
+      },
+      notFit: {
+        title: 'Non è ideale se',
+        bullets: [
+          'Importi un CSV solo una volta all’anno.',
+          'Non usi Brevo.',
+          'Hai già uno scenario Make o Zapier stabile gestito da una figura tecnica.',
+          'Ti serve una piattaforma completa di sincronizzazione bidirezionale.',
+        ],
+      },
     },
     setup: {
-      title: 'Pacchetto di setup RowsToCRM',
+      title: 'Scegli quanto supporto vuoi nel setup',
       subtitle:
-        'Un setup guidato per configurare il tuo Google Sheet, collegare Brevo, mappare i campi, preparare le colonne di tracking e validare il workflow con un test end-to-end.',
-      included: 'Cosa è incluso',
-      includes: [
-        'Preparazione del Google Sheet',
-        'Connessione API Brevo',
-        'Configurazione della mappatura campi',
-        'Configurazione liste',
-        'Setup collegamento aziende',
-        'Configurazione eventi opzionali',
-        'Colonne di tracking sincronizzazione',
-        'Controlli di setup e integrazione',
-        'Test end-to-end',
-        'Guida operativa',
+        'RowsToCRM è lo stesso workflow Google Sheets → Brevo. Scegli Self-Setup se vuoi configurarlo in autonomia, oppure Guided Setup se vuoi installazione e formazione one-to-one.',
+      note: 'Stesso prodotto. Livello di supporto diverso.',
+      packages: [
+        {
+          title: 'Pacchetto Self-Setup RowsToCRM',
+          price: '€ 490',
+          priceNote: 'una tantum',
+          label: 'Per team che vogliono configurare il workflow in autonomia',
+          included: 'Incluso',
+          features: [
+            'Pacchetto setup RowsToCRM',
+            'Template Google Sheet',
+            'Istruzioni di installazione',
+            'Guida alla configurazione API Brevo',
+            'Mappatura campi contatto',
+            'Mappatura campi azienda',
+            'Collegamento contatto-azienda',
+            'Assegnazione a liste Brevo',
+            'Colonne di tracking',
+            'Stati per riga: READY, PROCESSING, DONE, ERROR, SKIPPED',
+            'Test end-to-end guidato dalla documentazione',
+            'Guida operativa breve',
+          ],
+          notIncluded: 'Non include installazione one-to-one, revisione personalizzata dello Sheet o formazione operatori.',
+          cta: 'Prenota una valutazione Self-Setup',
+        },
+        {
+          title: 'Pacchetto Guided Setup RowsToCRM',
+          badge: 'Consigliato',
+          price: '€ 690',
+          priceNote: 'una tantum',
+          label: 'Per team che vogliono installazione guidata e formazione one-to-one',
+          included: 'Tutto il Self-Setup, più',
+          features: [
+            'Installazione guidata one-to-one',
+            'Revisione della struttura del Google Sheet',
+            'Configurazione insieme del workflow',
+            'Validazione della mappatura campi Brevo',
+            'Validazione del collegamento contatto-azienda',
+            'Test end-to-end insieme',
+            'Sessione di formazione one-to-one',
+            'Q&A operativo durante il setup',
+          ],
+          cta: 'Prenota una demo di 20 minuti',
+        },
       ],
-      investment: 'Investimento setup',
-      package: 'Pacchetto setup standard',
-      advanced: 'I progetti avanzati richiedono analisi e quotazione personalizzata',
-      custom: 'Requisiti personalizzati, deployment più ampi o partnership con agenzie sono benvenuti',
+      notes: [
+        'Nessun abbonamento mensile RowsToCRM è richiesto per il workflow configurato. Modifiche successive, supporto continuativo, più Sheet, più account Brevo o logiche custom avanzate possono essere quotati separatamente.',
+        'Hai bisogno di supporto dopo aver scelto Self-Setup? Puoi passare al Guided Setup pagando la differenza.',
+      ],
+    },
+    afterDemo: {
+      title: 'Cosa succede dopo la demo?',
+      steps: [
+        'Analizziamo la struttura del tuo Google Sheet e del tuo account Brevo.',
+        'Verifichiamo se RowsToCRM è adatto al tuo caso.',
+        'Scegli Self-Setup o Guided Setup.',
+        'Configuriamo o guidiamo il workflow.',
+        'Processi le prime righe di test.',
+      ],
+      cta: 'Prenota una valutazione setup',
     },
     faq: {
       title: 'Domande frequenti',
       items: [
         [
           'RowsToCRM è un prodotto ufficiale Google o Brevo?',
-          'No. RowsToCRM è una soluzione indipendente e non è affiliata, approvata o sponsorizzata da Google o Brevo.',
+          'No. RowsToCRM è un prodotto indipendente e non è affiliato, approvato o sponsorizzato da Google o Brevo.',
+        ],
+        [
+          'RowsToCRM può collegare contatti Brevo ad aziende?',
+          'Sì. RowsToCRM è pensato per creare o aggiornare aziende Brevo e collegare i contatti alle aziende come parte dello stesso workflow guidato.',
+        ],
+        [
+          'In cosa è diverso da Zapier o Make?',
+          'Zapier e Make sono piattaforme di automazione generiche. RowsToCRM è pensato in modo specifico per il lead intake Brevo da Google Sheets, con collegamento contatto-azienda, assegnazione liste, stati per riga e retry sicuro dentro il foglio.',
+        ],
+        [
+          'Qual è la differenza tra Self-Setup e Guided Setup?',
+          'Entrambi i pacchetti usano lo stesso workflow RowsToCRM. Self-Setup è per team che vogliono configurarlo in autonomia usando la documentazione. Guided Setup include installazione one-to-one, supporto alla configurazione e formazione.',
         ],
         [
           'Servono competenze tecniche?',
-          'No. RowsToCRM è pensato per un uso guidato da Google Sheets. Il setup iniziale viene configurato con supporto, poi gli operatori possono lavorare dalla sidebar.',
-        ],
-        [
-          'Sostituisce gli strumenti di automazione generici?',
-          'Non sempre. Gli strumenti generici restano utili per molti flussi. RowsToCRM è pensato in modo specifico per il lead intake da Google Sheets a Brevo, con mapping, collegamento aziende, liste, tracking e retry riga per riga.',
-        ],
-        [
-          'Può funzionare con Jotform o Google Forms?',
-          'Sì, se i dati arrivano o vengono raccolti in Google Sheets. RowsToCRM lavora sulle righe del foglio e le trasforma in record Brevo strutturati.',
+          'Per il Self-Setup è utile saper seguire istruzioni tecniche, configurare una API key e lavorare con Google Sheets. Il Guided Setup è pensato per team che vogliono supporto one-to-one su installazione, configurazione e formazione.',
         ],
         [
           'Cosa succede quando una riga fallisce?',
-          'La riga viene marcata con stato ERROR e un messaggio utile per capire il problema. Dopo la correzione, può essere ritentata senza riprocessare tutto il foglio.',
+          'La riga viene marcata con stato ERROR e un messaggio utile. Dopo aver verificato o corretto il problema, puoi ritentare le righe fallite senza riprocessare tutto il foglio.',
         ],
-        ['Posso processare righe in blocco?', 'Sì. Puoi preparare più righe e processarle dal foglio, mantenendo visibilità sullo stato di ciascuna riga.'],
+        ['Posso processare righe in blocco?', 'Sì. RowsToCRM è pensato per processare righe preparate dal foglio mantenendo visibilità sul risultato di ogni riga.'],
       ],
     },
     finalCta: {
