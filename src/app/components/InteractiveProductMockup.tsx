@@ -11,7 +11,7 @@ const initialStatuses: RowStatus[] = ['DONE', 'READY', 'ERROR', 'SKIPPED'];
 
 function ReadinessItem({ children }: { children: string }) {
   return (
-    <div className="flex items-center gap-2 rounded-lg border border-emerald-100 bg-emerald-50 px-3 py-2 text-sm text-slate-700">
+    <div className="flex min-w-0 items-center gap-2 rounded-lg border border-emerald-100 bg-emerald-50 px-3 py-2 text-sm text-slate-700">
       <CheckCircle2 className="h-4 w-4 shrink-0 text-[#446362]" aria-hidden="true" />
       <span>{children}</span>
     </div>
@@ -59,35 +59,35 @@ export function InteractiveProductMockup() {
 
   return (
     <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
-      <div className="flex items-center justify-between border-b border-slate-200 bg-slate-100 px-4 py-3">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-100 px-3 py-3 sm:px-4">
+        <div className="flex min-w-0 items-center gap-2">
           <span className="h-3 w-3 rounded-full bg-red-400" aria-hidden="true" />
           <span className="h-3 w-3 rounded-full bg-yellow-400" aria-hidden="true" />
           <span className="h-3 w-3 rounded-full bg-green-400" aria-hidden="true" />
-          <span className="ml-3 text-sm font-medium text-slate-600">{t.mockup.googleSheets}</span>
+          <span className="ml-1 truncate text-sm font-medium text-slate-600 sm:ml-3">{t.mockup.googleSheets}</span>
         </div>
-        <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#446362] shadow-sm">{t.mockup.demoPreview}</span>
+        <span className="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#446362] shadow-sm">{t.mockup.demoPreview}</span>
       </div>
 
-      <div className="flex items-center gap-4 border-b border-slate-200 bg-white px-4 py-2 text-xs text-slate-500">
+      <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 bg-white px-3 py-2 text-xs text-slate-500 sm:gap-4 sm:px-4">
         <span className="font-semibold text-[#446362]">{t.mockup.leadIntakeSheet}</span>
         <span aria-hidden="true">+</span>
         <span>{t.mockup.sidebarOpen}</span>
       </div>
 
-      <div className="grid lg:grid-cols-[minmax(0,1fr)_340px]">
+      <div className="grid min-w-0 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div className="min-w-0 bg-white">
-          <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-500">
+          <div className="flex min-w-0 items-center gap-2 overflow-hidden border-b border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-500 sm:px-4">
             <span className="rounded bg-white px-2 py-1 shadow-sm">A</span>
             <span className="rounded bg-white px-2 py-1 shadow-sm">B</span>
             <span className="rounded bg-white px-2 py-1 shadow-sm">C</span>
             <span className="rounded bg-white px-2 py-1 shadow-sm">D</span>
             <span className="rounded bg-white px-2 py-1 shadow-sm">E</span>
-            <span className="ml-auto text-[#446362]">{t.mockup.syncTrackingVisible}</span>
+            <span className="ml-auto hidden truncate text-[#446362] sm:block">{t.mockup.syncTrackingVisible}</span>
           </div>
 
-          <div className="overflow-x-auto p-4">
-            <table className="w-full min-w-[560px] border-collapse text-left text-xs">
+          <div className="max-w-full overflow-x-auto p-3 sm:p-4">
+            <table className="w-full min-w-[460px] border-collapse text-left text-xs sm:min-w-[560px]">
               <thead>
                 <tr className="border-b border-slate-200 text-slate-500">
                   <th className="px-3 py-2 font-semibold">{t.mockup.columns.firstName}</th>
@@ -130,7 +130,7 @@ export function InteractiveProductMockup() {
           </div>
         </div>
 
-        <aside className="border-t border-slate-200 bg-slate-50 p-4 lg:border-l lg:border-t-0">
+        <aside className="min-w-0 border-t border-slate-200 bg-slate-50 p-3 sm:p-4 lg:border-l lg:border-t-0">
           <div className="mb-4">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-bold text-slate-900">{t.mockup.title}</h2>
@@ -139,12 +139,12 @@ export function InteractiveProductMockup() {
             <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.mockup.subtitle}</p>
           </div>
 
-          <div className="mb-4 grid grid-cols-4 gap-2" role="tablist" aria-label={t.mockup.tablistAria}>
+          <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-4" role="tablist" aria-label={t.mockup.tablistAria}>
             {tabs.map((tab, index) => (
               <button
                 aria-label={t.mockup.tabAria[tab.toLowerCase() as Lowercase<MockupTab>]}
                 aria-selected={activeTab === tab}
-                className={`rounded-md border px-2 py-2 text-xs font-semibold transition-colors ${
+                className={`min-h-11 rounded-md border px-2 py-2 text-xs font-semibold transition-colors ${
                   activeTab === tab
                     ? 'border-[#446362] bg-[#446362] text-white'
                     : 'border-slate-200 bg-white text-slate-600 hover:border-[#446362]/50'
@@ -159,7 +159,7 @@ export function InteractiveProductMockup() {
             ))}
           </div>
 
-          <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+          <div className="min-w-0 rounded-lg border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
             {activeTab === 'Home' && (
               <div className="space-y-3" role="tabpanel">
                 {t.mockup.readiness.map((item) => (
@@ -205,10 +205,10 @@ export function InteractiveProductMockup() {
                 </div>
                 <div className="space-y-2">
                   {t.mockup.mappings.map(([from, to]) => (
-                    <div className="flex items-center justify-between gap-3 rounded-md border border-slate-100 bg-slate-50 px-3 py-2 text-xs" key={from}>
+                    <div className="grid gap-1 rounded-md border border-slate-100 bg-slate-50 px-3 py-2 text-xs sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-3" key={from}>
                       <span className="font-semibold text-slate-700">{from}</span>
-                      <span className="text-slate-400" aria-hidden="true">-&gt;</span>
-                      <span className="text-right text-slate-600">{to}</span>
+                      <span className="hidden text-slate-400 sm:inline" aria-hidden="true">-&gt;</span>
+                      <span className="text-slate-600 sm:text-right">{to}</span>
                     </div>
                   ))}
                 </div>

@@ -26,9 +26,9 @@ export function Header() {
   const { t } = useLanguage();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-emerald-100 bg-white/95 px-6 backdrop-blur">
-      <nav aria-label={t.nav.aria} className="mx-auto flex max-w-7xl items-center justify-between gap-6 py-4">
-        <a className="text-lg font-bold text-slate-900" href="#top">
+    <header className="sticky top-0 z-40 border-b border-emerald-100 bg-white/95 px-4 backdrop-blur sm:px-6">
+      <nav aria-label={t.nav.aria} className="mx-auto flex max-w-7xl items-center justify-between gap-3 py-4 lg:gap-6">
+        <a className="shrink-0 text-lg font-bold text-slate-900" href="#top">
           RowsToCRM
         </a>
 
@@ -55,11 +55,11 @@ export function Header() {
         </div>
 
         <details className="group relative lg:hidden">
-          <summary className="flex cursor-pointer list-none items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#446362] focus:ring-offset-2">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#446362] focus:ring-offset-2">
             <Menu className="h-4 w-4" aria-hidden="true" />
             {t.nav.menu}
           </summary>
-          <div className="absolute right-0 mt-3 w-72 rounded-xl border border-slate-200 bg-white p-4 shadow-xl">
+          <div className="absolute right-0 mt-3 w-[min(18rem,calc(100vw-2rem))] rounded-xl border border-slate-200 bg-white p-4 shadow-xl">
             <div className="grid gap-3">
               <a className="text-sm font-medium text-slate-700" href="/#solution">{t.nav.product}</a>
               <a className="text-sm font-medium text-slate-700" href="/#how-it-works">{t.nav.howItWorks}</a>

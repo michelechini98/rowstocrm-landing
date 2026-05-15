@@ -18,7 +18,7 @@ const statusDotStyles: Record<RowStatus, string> = {
 
 export function StatusBadge({ status }: { status: RowStatus }) {
   return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold ${statusStyles[status]}`}>
+    <span className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold whitespace-nowrap ${statusStyles[status]}`}>
       <span className={`h-1.5 w-1.5 rounded-full ${statusDotStyles[status]}`} aria-hidden="true" />
       {status}
     </span>

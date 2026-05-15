@@ -6,13 +6,13 @@ export function FinalCTA() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-emerald-700 to-emerald-900">
+    <section className="bg-gradient-to-br from-emerald-700 to-emerald-900 px-4 py-16 sm:px-6 sm:py-20">
       <div className="max-w-4xl mx-auto text-center">
         <div className="inline-block p-3 bg-white/10 rounded-full mb-6">
           <Calendar className="w-8 h-8 text-white" aria-hidden="true" />
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
           {t.finalCta.title}
         </h2>
 
@@ -21,11 +21,11 @@ export function FinalCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <BookingLink className="px-8 py-4 bg-white text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors inline-flex items-center gap-2 justify-center">
+          <BookingLink className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-4 text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8">
             <span>{t.cta.primary}</span>
             <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </BookingLink>
-          <a href="#setup-package" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white/10 rounded-lg transition-colors">
+          <a href="#setup-package" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-white px-6 py-4 text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8">
             {t.cta.secondary}
           </a>
         </div>

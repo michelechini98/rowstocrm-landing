@@ -15,10 +15,10 @@ export function WhoItsFor() {
   };
 
   return (
-    <section id="who-it-is-for" className="py-20 px-6 bg-gradient-to-b from-white to-gray-50">
+    <section id="who-it-is-for" className="bg-gradient-to-b from-white to-gray-50 px-4 py-16 sm:px-6 sm:py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl">
             {t.audience.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="py-12 px-6 bg-gray-900 text-gray-400">
+    <footer className="bg-gray-900 px-4 py-12 text-gray-400 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>

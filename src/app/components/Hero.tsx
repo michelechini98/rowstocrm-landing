@@ -7,27 +7,27 @@ export function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white px-6 py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white px-4 py-14 sm:px-6 sm:py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="min-w-0">
             <div className="inline-block px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full mb-6">
               {t.hero.eyebrow}
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="mb-6 text-[clamp(2.25rem,11vw,3rem)] font-bold leading-tight text-gray-900 sm:text-5xl">
               {t.hero.title}
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="mb-8 text-lg leading-relaxed text-gray-600 sm:text-xl">
               {t.hero.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <BookingLink className="inline-flex items-center justify-center px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg transition-colors">
+              <BookingLink className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-emerald-700 px-6 py-4 text-center text-white transition-colors hover:bg-emerald-800 sm:w-auto sm:px-8">
                 {t.cta.primary}
               </BookingLink>
-              <a href="#setup-package" className="inline-flex items-center justify-center px-8 py-4 border-2 border-emerald-700 text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors">
+              <a href="#setup-package" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-emerald-700 px-6 py-4 text-center text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8">
                 {t.cta.secondary}
               </a>
             </div>
@@ -42,7 +42,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative min-w-0">
             <InteractiveProductMockup />
           </div>
         </div>

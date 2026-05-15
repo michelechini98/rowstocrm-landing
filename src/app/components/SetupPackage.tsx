@@ -6,10 +6,10 @@ export function SetupPackage() {
   const { t } = useLanguage();
 
   return (
-    <section id="setup-package" className="py-20 px-6 bg-white">
+    <section id="setup-package" className="bg-white px-4 py-16 sm:px-6 sm:py-20">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
             {t.setup.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -17,7 +17,7 @@ export function SetupPackage() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-10 border-2 border-emerald-200">
+        <div className="rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-blue-50 p-5 sm:p-10">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t.setup.included}</h3>
@@ -34,7 +34,7 @@ export function SetupPackage() {
             <div className="flex flex-col justify-between">
               <div className="bg-white rounded-xl p-8 shadow-md mb-6">
                 <div className="text-sm text-gray-600 mb-2">{t.setup.investment}</div>
-                <div className="text-5xl font-bold text-gray-900 mb-2">€690</div>
+                <div className="mb-2 text-4xl font-bold text-gray-900 sm:text-5xl">€690</div>
                 <div className="text-gray-600 mb-4">{t.setup.package}</div>
                 <div className="text-sm text-gray-500 border-t pt-4">
                   {t.setup.advanced}

@@ -36,17 +36,17 @@ export function RowJourney() {
   };
 
   return (
-    <section className="bg-white px-6 py-20">
+    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-3xl">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900">{t.journey.title}</h2>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">{t.journey.title}</h2>
           <p className="text-lg leading-relaxed text-gray-600">
             {t.journey.subtitle}
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+        <div className="grid min-w-0 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <div className="min-w-0 rounded-xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
             <div className="mb-4 flex items-center justify-between gap-3">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900">{t.journey.sampleRow}</h3>
@@ -55,8 +55,8 @@ export function RowJourney() {
               <StatusBadge status={status} />
             </div>
 
-            <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
-              <table className="w-full min-w-[520px] text-left text-sm">
+            <div className="max-w-full overflow-x-auto rounded-lg border border-slate-200 bg-white">
+              <table className="w-full min-w-[430px] text-left text-sm sm:min-w-[520px]">
                 <thead className="bg-slate-50 text-xs text-slate-500">
                   <tr>
                     <th className="px-3 py-2 font-semibold">{t.mockup.columns.firstName}</th>
@@ -94,7 +94,7 @@ export function RowJourney() {
 
               return (
                 <li
-                  className={`flex items-center gap-4 rounded-xl border p-4 transition-colors ${
+                  className={`flex min-w-0 items-center gap-3 rounded-xl border p-4 transition-colors sm:gap-4 ${
                     isReached ? 'border-emerald-200 bg-emerald-50' : 'border-slate-200 bg-white'
                   }`}
                   key={step}
@@ -122,16 +122,16 @@ export function MappingCanvas() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-gradient-to-b from-white to-emerald-50 px-6 py-20">
+    <section className="bg-gradient-to-b from-white to-emerald-50 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900">{t.mappingCanvas.title}</h2>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">{t.mappingCanvas.title}</h2>
           <p className="mx-auto max-w-3xl text-lg text-gray-600">
             {t.mappingCanvas.subtitle}
           </p>
         </div>
 
-        <div className="relative rounded-2xl border border-emerald-100 bg-white p-6 shadow-lg">
+        <div className="relative min-w-0 rounded-2xl border border-emerald-100 bg-white p-4 shadow-lg sm:p-6">
           <svg className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block" aria-hidden="true">
             {t.mappingCanvas.rows.map((_, index) => {
               const y = 104 + index * 62;
@@ -165,8 +165,8 @@ export function MappingCanvas() {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center gap-2 rounded-lg border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-slate-700">
-            <Link2 className="h-4 w-4 text-[#446362]" aria-hidden="true" />
+          <div className="mt-6 flex min-w-0 items-start gap-2 rounded-lg border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-slate-700">
+            <Link2 className="mt-0.5 h-4 w-4 shrink-0 text-[#446362]" aria-hidden="true" />
             {t.mappingCanvas.note}
           </div>
         </div>
@@ -188,10 +188,10 @@ export function BeforeAfterTracking() {
   ];
 
   return (
-    <section className="bg-white px-6 py-20">
+    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-3xl">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900">{t.tracking.title}</h2>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">{t.tracking.title}</h2>
           <p className="text-lg text-gray-600">
             {t.tracking.subtitle}
           </p>
@@ -214,13 +214,13 @@ function TrackingTable({ columns, enriched, status, title }: { columns: string[]
   const { t } = useLanguage();
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
+    <div className="min-w-0 rounded-xl border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 p-4">
         <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
         <p className="text-sm text-slate-600">{status}</p>
       </div>
-      <div className="overflow-x-auto p-4">
-        <table className="w-full min-w-[640px] text-left text-xs">
+      <div className="max-w-full overflow-x-auto p-4">
+        <table className="w-full min-w-[520px] text-left text-xs sm:min-w-[640px]">
           <thead className="bg-slate-50 text-slate-500">
             <tr>
               {columns.map((column) => (
