@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: SITE_URL_PLACEHOLDER/sitemap.xml
+Sitemap: https://rowstocrm.com/sitemap.xml

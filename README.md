@@ -43,15 +43,12 @@ Publish directory: dist
 
 The same settings are included in `netlify.toml`.
 
-## Required Placeholders
+## Production URLs
 
 Replace these before publishing:
 
-- `CALENDLY_URL_PLACEHOLDER`: demo booking URL.
-- `CONTACT_EMAIL_PLACEHOLDER`: public contact email address.
-- `SITE_URL_PLACEHOLDER`: final production site URL, used in canonical and sitemap.
-- `TERMS_URL_PLACEHOLDER`: terms page URL, or replace with `/terms.html` after adding a page.
-- `PRIVACY_URL_PLACEHOLDER`: privacy page URL, or replace with `/privacy.html` after adding a page.
+- Demo booking URL: `https://zcal.co/rowstocrm/rowstocrm`.
+- Cookie Policy URL: `/cookie-policy`.
 
 ## Notes
 

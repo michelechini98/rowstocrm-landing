@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">RowsToCRM</title>
+  <desc id="desc">RowsToCRM turns Google Sheets rows into Brevo-ready leads.</desc>
+  <rect width="1200" height="630" fill="#f0fdf4"/>
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="#ffffff" stroke="#c7ded8" stroke-width="2"/>
+  <text x="118" y="160" fill="#446362" font-family="Arial, sans-serif" font-size="48" font-weight="700">RowsToCRM</text>
+  <text x="118" y="235" fill="#0f172a" font-family="Arial, sans-serif" font-size="62" font-weight="700">Google Sheets to Brevo</text>
+  <text x="118" y="307" fill="#0f172a" font-family="Arial, sans-serif" font-size="62" font-weight="700">lead intake</text>
+  <text x="118" y="378" fill="#475569" font-family="Arial, sans-serif" font-size="28">Map rows, link companies, assign lists and track sync status.</text>
+  <g transform="translate(118 438)">
+    <rect width="142" height="52" rx="26" fill="#dcfce7"/>
+    <text x="32" y="34" fill="#166534" font-family="Arial, sans-serif" font-size="20" font-weight="700">READY</text>
+    <rect x="162" width="194" height="52" rx="26" fill="#dbeafe"/>
+    <text x="194" y="34" fill="#1d4ed8" font-family="Arial, sans-serif" font-size="20" font-weight="700">PROCESSING</text>
+    <rect x="376" width="124" height="52" rx="26" fill="#bbf7d0"/>
+    <text x="414" y="34" fill="#166534" font-family="Arial, sans-serif" font-size="20" font-weight="700">DONE</text>
+  </g>
+  <g transform="translate(782 156)">
+    <rect width="258" height="318" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+    <rect x="28" y="32" width="202" height="20" rx="10" fill="#446362"/>
+    <rect x="28" y="78" width="160" height="18" rx="9" fill="#cbd5e1"/>
+    <rect x="28" y="122" width="202" height="40" rx="10" fill="#ecfdf5" stroke="#86efac"/>
+    <rect x="28" y="184" width="202" height="40" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="28" y="246" width="202" height="40" rx="10" fill="#446362"/>
+  </g>
+</svg>
