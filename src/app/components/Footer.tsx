@@ -1,9 +1,10 @@
 import { contactEmail, cookiePolicyUrl, privacyUrl, termsUrl } from '../../config/links';
 import { useLanguage } from '../../i18n/useLanguage';
+import { seoLandingPageList } from '../seoLandingPages';
 import { BookingLink } from './BookingLink';
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <footer className="bg-gray-900 px-4 py-12 text-gray-400 sm:px-6">
@@ -21,6 +22,13 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li><a href="/#how-it-works" className="hover:text-white transition-colors">{t.nav.howItWorks}</a></li>
               <li><a href="/#setup-package" className="hover:text-white transition-colors">{t.nav.setupPackage}</a></li>
+              {seoLandingPageList.map((page) => (
+                <li key={page.en.path}>
+                  <a href={page.en.path} className="hover:text-white transition-colors">
+                    {page[language].navLabel}
+                  </a>
+                </li>
+              ))}
               <li><BookingLink className="hover:text-white transition-colors">{t.nav.bookDemo}</BookingLink></li>
             </ul>
           </div>

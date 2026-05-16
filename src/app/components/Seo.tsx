@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { ogImageUrl, siteUrl } from '../../config/links';
 import { useLanguage } from '../../i18n/useLanguage';
+import { getSeoLandingPageByPath } from '../seoLandingPages';
 
 function setMeta(name: string, content: string, attribute: 'name' | 'property' = 'name') {
   let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`);
@@ -36,13 +37,17 @@ export function Seo() {
     const isCookiePolicyPage = pathname === '/cookie-policy';
     const isPrivacyPage = pathname === '/privacy';
     const isTermsPage = pathname === '/terms';
-    const legalPath = isPrivacyPage ? '/privacy' : isTermsPage ? '/terms' : isCookiePolicyPage ? '/cookie-policy' : '';
+    const seoLandingPage = getSeoLandingPageByPath(pathname);
+    const seoLandingPageMeta = seoLandingPage?.[language];
+    const pagePath = isPrivacyPage ? '/privacy' : isTermsPage ? '/terms' : isCookiePolicyPage ? '/cookie-policy' : seoLandingPage?.en.path || '';
     const title = isPrivacyPage
       ? 'Informativa Privacy | RowsToCRM'
       : isTermsPage
         ? 'Termini e Condizioni | RowsToCRM'
         : isCookiePolicyPage
           ? 'Cookie Policy | RowsToCRM'
+          : seoLandingPageMeta
+            ? seoLandingPageMeta.title
           : t.seo.title;
     const description = isPrivacyPage
       ? 'Informativa Privacy di RowsToCRM: dati trattati, finalità, basi giuridiche, cookie, fornitori, conservazione e diritti degli utenti.'
@@ -50,8 +55,10 @@ export function Seo() {
         ? 'Termini e Condizioni di RowsToCRM: utilizzo del sito, demo, setup, responsabilità utente, servizi terzi, pagamenti, limitazioni e contatti.'
         : isCookiePolicyPage
           ? 'Cookie Policy di RowsToCRM: uso di cookie tecnici e local storage per funzionalità essenziali e preferenza lingua.'
+          : seoLandingPageMeta
+            ? seoLandingPageMeta.description
           : t.seo.description;
-    const canonicalUrl = `${siteUrl}${legalPath}`;
+    const canonicalUrl = `${siteUrl}${pagePath}`;
 
     document.title = title;
     setMeta('description', description);
@@ -63,9 +70,9 @@ export function Seo() {
     setMeta('twitter:description', description);
     setMeta('twitter:image', ogImageUrl);
     setLink('canonical', canonicalUrl);
-    setLink('alternate', `${siteUrl}${legalPath || '/'}`, 'en');
-    setLink('alternate', `${siteUrl}${legalPath || '/'}${legalPath ? '?lang=it' : '?lang=it'}`, 'it');
-    setLink('alternate', `${siteUrl}${legalPath || '/'}`, 'x-default');
+    setLink('alternate', `${siteUrl}${pagePath || '/'}`, 'en');
+    setLink('alternate', `${siteUrl}${pagePath || '/'}?lang=it`, 'it');
+    setLink('alternate', `${siteUrl}${pagePath || '/'}`, 'x-default');
     document.documentElement.lang = language;
   }, [language, t]);
 

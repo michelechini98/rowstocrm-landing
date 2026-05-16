@@ -6,6 +6,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://rowstocrm.com/google-sheets-to-brevo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rowstocrm.com/brevo-contact-company-linking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rowstocrm.com/zapier-make-alternative-for-brevo-sheets</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rowstocrm.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
