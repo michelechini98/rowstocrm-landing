@@ -25,7 +25,7 @@ export function FinalCTA() {
             <span>{t.cta.primary}</span>
             <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </BookingLink>
-          <a href="#setup-package" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-white px-6 py-4 text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8">
+          <a href="#how-it-works" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-white px-6 py-4 text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8">
             {t.cta.secondary}
           </a>
         </div>
