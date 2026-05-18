@@ -35,12 +35,22 @@ export function Seo() {
   useEffect(() => {
     const pathname = window.location.pathname;
     const isCookiePolicyPage = pathname === '/cookie-policy';
+    const isHomePage = pathname === '/';
     const isPrivacyPage = pathname === '/privacy';
     const isTermsPage = pathname === '/terms';
     const seoLandingPage = getSeoLandingPageByPath(pathname);
     const seoLandingPageMeta = seoLandingPage?.[language];
-    const pagePath = isPrivacyPage ? '/privacy' : isTermsPage ? '/terms' : isCookiePolicyPage ? '/cookie-policy' : seoLandingPage?.en.path || '';
-    const title = isPrivacyPage
+    const isNotFoundPage = !isHomePage && !isPrivacyPage && !isTermsPage && !isCookiePolicyPage && !seoLandingPage;
+    const pagePath = isPrivacyPage
+      ? '/privacy'
+      : isTermsPage
+        ? '/terms'
+        : isCookiePolicyPage
+          ? '/cookie-policy'
+          : seoLandingPage?.en.path || (isNotFoundPage ? pathname : '');
+    const title = isNotFoundPage
+      ? 'Page not found | RowsToCRM'
+      : isPrivacyPage
       ? 'Informativa Privacy | RowsToCRM'
       : isTermsPage
         ? 'Termini e Condizioni | RowsToCRM'
@@ -49,7 +59,9 @@ export function Seo() {
           : seoLandingPageMeta
             ? seoLandingPageMeta.title
           : t.seo.title;
-    const description = isPrivacyPage
+    const description = isNotFoundPage
+      ? 'The requested RowsToCRM page could not be found. Return to the homepage or book a setup review for your Google Sheets to Brevo workflow.'
+      : isPrivacyPage
       ? 'Informativa Privacy di RowsToCRM: dati trattati, finalità, basi giuridiche, cookie, fornitori, conservazione e diritti degli utenti.'
       : isTermsPage
         ? 'Termini e Condizioni di RowsToCRM: utilizzo del sito, demo, setup, responsabilità utente, servizi terzi, pagamenti, limitazioni e contatti.'
@@ -62,6 +74,7 @@ export function Seo() {
 
     document.title = title;
     setMeta('description', description);
+    setMeta('robots', isNotFoundPage ? 'noindex, follow' : 'index, follow');
     setMeta('og:title', title, 'property');
     setMeta('og:description', description, 'property');
     setMeta('og:url', canonicalUrl, 'property');

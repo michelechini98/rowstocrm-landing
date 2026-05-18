@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import type { Language } from '../../i18n/translations';
 import { useLanguage } from '../../i18n/useLanguage';
-import type { SeoLandingPageContent } from '../seoLandingPages';
+import { seoLandingPages, type SeoLandingPageContent } from '../seoLandingPages';
 import { BookingLink } from './BookingLink';
 
 type SeoLandingPageProps = {
@@ -59,6 +59,7 @@ function OutcomePreview({ content }: { content: SeoLandingPageContent }) {
 export function SeoLandingPage({ page }: SeoLandingPageProps) {
   const { language } = useLanguage();
   const content = page[language];
+  const relatedPages = content.relatedPageKeys.map((key) => seoLandingPages[key].en);
 
   return (
     <main className="bg-white">
@@ -77,6 +78,12 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
                 {content.cta.button}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </BookingLink>
+              <a
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-emerald-200 bg-white px-5 py-3 text-center font-semibold text-[#446362] transition-colors hover:bg-emerald-50 sm:w-auto"
+                href="/"
+              >
+                Back to RowsToCRM
+              </a>
             </div>
           </div>
 
@@ -146,6 +153,24 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
                 </summary>
                 <p className="mt-3 leading-relaxed text-slate-600">{answer}</p>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-14 sm:px-6 sm:py-16">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-5 text-2xl font-bold text-slate-950 sm:text-3xl">Related RowsToCRM guides</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {relatedPages.map((relatedPage) => (
+              <a
+                className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-colors hover:border-emerald-200 hover:bg-emerald-50"
+                href={relatedPage.path}
+                key={relatedPage.path}
+              >
+                <span className="mb-3 block text-sm font-semibold text-[#446362]">{relatedPage.navLabel}</span>
+                <span className="block text-lg font-bold leading-snug text-slate-950">{relatedPage.h1}</span>
+              </a>
             ))}
           </div>
         </div>
