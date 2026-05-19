@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">RowsToCRM</title>
-  <desc id="desc">RowsToCRM turns Google Sheets rows into Brevo-ready leads.</desc>
+  <desc id="desc">RowsToCRM creates and updates Brevo contacts from Google Sheets with company linking.</desc>
   <rect width="1200" height="630" fill="#f0fdf4"/>
   <rect x="72" y="72" width="1056" height="486" rx="28" fill="#ffffff" stroke="#c7ded8" stroke-width="2"/>
   <text x="118" y="160" fill="#446362" font-family="Arial, sans-serif" font-size="48" font-weight="700">RowsToCRM</text>
   <text x="118" y="235" fill="#0f172a" font-family="Arial, sans-serif" font-size="62" font-weight="700">Google Sheets to Brevo</text>
-  <text x="118" y="307" fill="#0f172a" font-family="Arial, sans-serif" font-size="62" font-weight="700">lead intake</text>
-  <text x="118" y="378" fill="#475569" font-family="Arial, sans-serif" font-size="28">Map rows, link companies, assign lists and track sync status.</text>
+  <text x="118" y="307" fill="#0f172a" font-family="Arial, sans-serif" font-size="62" font-weight="700">contacts + companies</text>
+  <text x="118" y="378" fill="#475569" font-family="Arial, sans-serif" font-size="28">Map columns, sync contacts, link companies and track row status.</text>
   <g transform="translate(118 438)">
     <rect width="142" height="52" rx="26" fill="#dcfce7"/>
     <text x="32" y="34" fill="#166534" font-family="Arial, sans-serif" font-size="20" font-weight="700">READY</text>

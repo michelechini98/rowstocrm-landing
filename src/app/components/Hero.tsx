@@ -27,7 +27,7 @@ export function Hero() {
               <BookingLink className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-emerald-700 px-6 py-4 text-center text-white transition-colors hover:bg-emerald-800 sm:w-auto sm:px-8">
                 {t.cta.primary}
               </BookingLink>
-              <a href="#setup-package" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-emerald-700 px-6 py-4 text-center text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8">
+              <a href="#how-it-works" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-emerald-700 px-6 py-4 text-center text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8">
                 {t.cta.secondary}
               </a>
             </div>
@@ -40,6 +40,10 @@ export function Hero() {
                 </div>
               ))}
             </div>
+
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-500">
+              {t.hero.microcopy}
+            </p>
           </div>
 
           <div className="relative min-w-0">

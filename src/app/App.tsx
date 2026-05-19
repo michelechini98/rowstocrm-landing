@@ -12,6 +12,7 @@ import { SetupPackage } from './components/SetupPackage';
 import { FAQ } from './components/FAQ';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { NotFound } from './components/NotFound';
 import { CookiePolicy } from './components/CookiePolicy';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { Seo } from './components/Seo';
@@ -46,6 +47,7 @@ function LandingPage() {
 export default function App() {
   const pathname = window.location.pathname;
   const isCookiePolicyPage = pathname === '/cookie-policy';
+  const isHomePage = pathname === '/';
   const isPrivacyPage = pathname === '/privacy';
   const isTermsPage = pathname === '/terms';
   const seoLandingPage = getSeoLandingPageByPath(pathname);
@@ -54,7 +56,9 @@ export default function App() {
     <div id="top" className="min-h-screen bg-white">
       <Seo />
       <Header />
-      {isTermsPage ? (
+      {isHomePage ? (
+        <LandingPage />
+      ) : isTermsPage ? (
         <TermsAndConditions />
       ) : isPrivacyPage ? (
         <PrivacyPolicy />
@@ -63,7 +67,7 @@ export default function App() {
       ) : seoLandingPage ? (
         <SeoLandingPage page={seoLandingPage} />
       ) : (
-        <LandingPage />
+        <NotFound />
       )}
       <Footer />
     </div>

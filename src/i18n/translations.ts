@@ -3,9 +3,9 @@ export type Language = 'en' | 'it';
 export const translations = {
   en: {
     seo: {
-      title: 'RowsToCRM - Google Sheets Brevo Workflow for Marketing Teams',
+      title: 'Google Sheets to Brevo Integration for Contacts & Companies | RowsToCRM',
       description:
-        'Google Sheets to Brevo workflow for creating Brevo contacts from Google Sheets, linking contacts to companies, assigning lists and tracking row status.',
+        'Create and update Brevo contacts from Google Sheets, link contacts to companies, assign lists and track row-level sync status with RowsToCRM.',
     },
     nav: {
       aria: 'Primary navigation',
@@ -18,24 +18,26 @@ export const translations = {
       bookDemo: 'Book a demo',
     },
     cta: {
-      primary: 'Book a 20-minute demo',
-      secondary: 'View setup packages',
+      primary: 'Book a 20-minute setup review',
+      secondary: 'See how the sync works',
       bookDemo: 'Book a demo',
       fit: 'See if RowsToCRM fits your workflow',
       reviewWorkflow: 'Review your Brevo workflow',
       setupReview: 'Book a setup review',
       selfSetupReview: 'Book self-setup review',
-      demoAria: 'Book a 20-minute RowsToCRM demo',
+      demoAria: 'Book a 20-minute RowsToCRM setup review',
     },
     hero: {
-      eyebrow: 'Google Sheets add-on for Brevo users',
-      title: 'Create Brevo contacts and companies from Google Sheets, without building automation workflows',
+      eyebrow: 'Google Sheets to Brevo integration',
+      title: 'Create and update Brevo contacts from Google Sheets, with companies linked automatically',
       subtitle:
-        'RowsToCRM turns reviewed spreadsheet rows into complete Brevo records: contacts, companies, contact-company links, list assignments, optional events and row-level sync statuses — all from a guided Google Sheets sidebar.',
+        'Map your Sheet columns once, then process rows into Brevo contacts linked to the right companies, with list assignment and row-level sync status.',
+      microcopy:
+        'Built for Brevo users who manage leads in Google Sheets and need more control than a generic automation scenario.',
       bullets: [
-        'Contact + company + linking in one row',
-        'Guided sidebar inside Google Sheets',
-        'Row-level sync tracking and safe retry',
+        'Built for Brevo users managing leads in Google Sheets',
+        'Create or update contacts and link companies automatically',
+        'Assign lists and track sync status row by row',
       ],
     },
     mockup: {
@@ -91,68 +93,68 @@ export const translations = {
       settings: ['API key connected', 'Tracking columns ready', 'Brevo data refreshed'],
     },
     problem: {
-      title: 'Lead data starts in spreadsheets. Brevo needs structured records.',
+      title: 'Google Sheets to Brevo integration, built for structured lead intake',
       subtitle:
-        'Most teams collect leads from forms, partners, events or manual sheets. But turning those rows into complete Brevo records often requires manual imports, technical workflow setup or multiple disconnected automation steps.',
+        'RowsToCRM reads structured Google Sheets rows, uses your saved column mapping, and sends them to Brevo as contacts linked to companies. It can assign lists, trigger optional events and write the sync result back to each row.',
       cards: [
         {
           icon: '📊',
-          title: 'Fragile workflows',
-          description: 'Generic automation platforms require multi-step scenarios and scenario maintenance',
+          title: 'Rows need structure',
+          description: 'Lead rows from forms, events, Jotform, partner lists or manual spreadsheets need consistent fields before they sync',
         },
         {
           icon: '🔍',
-          title: 'Poor visibility',
-          description: 'No clear way to see which rows synced, which failed, or why errors occurred',
+          title: 'Operators need clarity',
+          description: 'Teams need to see which rows were processed, skipped or need review without digging through automation logs',
         },
         {
           icon: '🏢',
-          title: 'Missing relationships',
-          description: 'Contact-company linking is manual or requires separate technical setup',
+          title: 'Companies matter',
+          description: 'A contact import is not enough when Brevo contacts also need to be linked to the right company',
         },
       ],
     },
     solution: {
-      title: 'A guided Brevo lead intake workflow, inside Google Sheets',
+      title: 'Create or update Brevo contacts from mapped Sheet columns',
       subtitle:
-        'RowsToCRM gives operators a sidebar to connect Brevo, configure mappings, create tracking columns, run checks and process prepared rows without leaving the spreadsheet.',
+        'Map email, name, phone, source, company, list and other Sheet columns to the Brevo fields you use. Then process reviewed rows from the sidebar instead of rebuilding the same import logic each time.',
       steps: [
         {
-          title: 'Map your columns',
-          description: 'Assign Sheet columns to Brevo contact fields, company fields and event properties',
+          title: 'Map columns once',
+          description: 'Connect Google Sheets columns to Brevo contact fields, company fields, list assignment and optional event fields',
         },
         {
-          title: 'Create tracking columns',
-          description: 'Add status, timestamp and error columns to monitor sync results',
+          title: 'Process structured rows',
+          description: 'Create or update Brevo contacts from the rows your team has already reviewed',
         },
         {
-          title: 'Process rows',
-          description: 'One row creates contact, company, linking, list assignment and optional event',
+          title: 'Write status back',
+          description: 'Add row-level sync status, IDs, timestamps and useful error messages back to the sheet',
         },
       ],
-      flow: ['Contact data -> Brevo contact', 'Company data -> Brevo company', 'Automatic contact-company link', 'List assignment + event trigger'],
+      flow: ['Mapped Sheet columns -> Brevo fields', 'Row data -> contact create or update', 'Company column -> Brevo company link', 'List column -> Brevo list assignment'],
     },
     journey: {
-      title: 'From one spreadsheet row to a complete Brevo record',
+      title: 'From one mapped Sheet row to a Brevo contact with company linking',
       subtitle:
-        'RowsToCRM makes the operational path visible: validate the row, create the contact, create or update the company, link them, assign the list and write the result back to the Sheet.',
+        'RowsToCRM makes the sync path visible: validate the row, create or update the Brevo contact, match the company, link the records, assign the list and write the result back to the Sheet.',
       sampleRow: 'Sample row',
       demoOnly: 'Demo data only',
       process: 'Process sample row',
       processingAria: 'Sample row processing steps',
       sample: ['Marco', 'Fieldline Studio', 'marco@fieldline.example', 'Webinar Leads'],
-      steps: ['Validating fields', 'Creating contact', 'Creating company', 'Linking company', 'Assigning list', 'Writing status DONE'],
+      steps: ['Validating mapped fields', 'Creating or updating contact', 'Matching company', 'Linking contact to company', 'Assigning Brevo list', 'Writing sync status DONE'],
       running: 'Running now',
       reached: 'Ready in this guided flow',
       waiting: 'Waiting for row processing',
     },
     mappingCanvas: {
-      title: 'Map sheet columns to Brevo outcomes',
+      title: 'Assign contacts to Brevo lists from your spreadsheet',
       subtitle:
-        'The mapping layer shows exactly how a row becomes a contact, company, list assignment and optional event property.',
+        'The mapping layer shows how Sheet columns feed Brevo contact fields, company fields, list assignment and optional event properties.',
       left: 'Sheet columns',
       right: 'Brevo fields',
-      note: 'One saved mapping controls contacts, companies, list assignment and event properties.',
+      note: 'One saved mapping controls contact create/update, Brevo company linking, list assignment and optional event properties.',
       rows: [
         ['Email', 'Contact email', 'Contact'],
         ['First Name', 'Contact firstname', 'Contact'],
@@ -162,65 +164,62 @@ export const translations = {
       ],
     },
     comparison: {
-      title: 'Built for marketing operators, not automation builders',
+      title: 'Why use RowsToCRM instead of generic automation tools?',
       subtitle:
-        'Zapier and Make are powerful when someone can build, test and maintain scenarios. RowsToCRM gives your marketing team a guided Brevo lead intake workflow directly inside Google Sheets.',
+        'Most automation tools can move a new row into Brevo as a contact. RowsToCRM is built for teams that need a cleaner lead intake workflow: mapped columns, contact creation or update, company linking, list assignment and row-level status inside Google Sheets.',
       genericTitle: 'Generic automation platforms',
       genericDiagramAria: 'Generic automation maze diagram',
       genericNodes: ['Sheet row', 'Contact', 'Formatter', 'Company', 'List', 'Retry'],
       genericBullets: [
-        'Require scenario building',
-        'Need testing and maintenance',
-        'Company linking may require advanced setup',
-        'Row-level retry must be designed',
-        'Operators often work outside the spreadsheet',
+        'Good for moving data between apps',
+        'Require scenario design and maintenance',
+        'Often need extra API steps for company linking',
+        'Can make failed rows harder to review inside the spreadsheet',
       ],
       rowsTitle: 'RowsToCRM',
       rowsDiagramAria: 'RowsToCRM guided path diagram',
-      rowsNodes: ['Sheet row', 'Validate fields', 'Create contact', 'Link company', 'Assign list', 'Write DONE'],
+      rowsNodes: ['Mapped row', 'Validate fields', 'Create/update contact', 'Link company', 'Assign list', 'Write status'],
       rowsBullets: [
-        'Guided workflow inside Google Sheets',
-        'Built for Brevo lead intake',
-        'Contact + company + linking in one row',
-        'Row-level statuses in the Sheet',
-        'Error review and safe retry included',
+        'Built specifically for Brevo lead intake from Google Sheets',
+        'Maps Sheet columns to Brevo contact and company fields',
+        'Creates or updates contacts',
+        'Links contacts to companies automatically',
+        'Assigns Brevo lists',
+        'Writes sync status back to each row',
       ],
       note:
-        'Zapier and Make give you automation platforms. RowsToCRM gives you a purpose-built Brevo lead intake workflow, with optional one-to-one guidance to make your team autonomous.',
+        'RowsToCRM is for Brevo users who manage reviewed lead rows in Google Sheets and want company linking, list assignment and row-level status without building a complex automation scenario.',
     },
     ctaStrip: {
       comparison: {
-        title: 'Want a guided Brevo workflow without building scenarios?',
+        title: 'Want to review your Google Sheets Brevo sync before setting it up?',
         cta: 'Book a setup review',
       },
       journey: {
-        title: 'Want to review your Brevo workflow from the Sheet?',
-        cta: 'Review your Brevo workflow',
+        title: 'Want to see how one mapped row becomes a Brevo contact?',
+        cta: 'Book a 20-minute setup review',
       },
     },
     records: {
-      title: 'Not just contacts. Complete Brevo records.',
+      title: 'Link Brevo contacts to companies automatically',
       subtitle:
-        'RowsToCRM can create the contact, create or update the company, link the contact to the company, assign the contact to a Brevo list and write the processing result back to the Sheet.',
-      steps: ['Sheet row', 'Contact', 'Company', 'Link', 'List', 'DONE'],
+        'RowsToCRM can use company data from your Sheet to create or match Brevo companies, link contacts to the right company, assign the contact to a Brevo list and write the processing result back to the Sheet.',
+      steps: ['Mapped row', 'Contact', 'Company', 'Link', 'List', 'Status'],
     },
     howItWorks: {
-      title: 'How it works',
-      subtitle: 'A guided workflow that takes your reviewed spreadsheet rows to structured Brevo records.',
+      title: 'How the Google Sheets to Brevo sync works',
+      subtitle: 'Map your columns once, then process reviewed rows into Brevo contacts with company linking and row-level sync status.',
       steps: [
-        ['Open the sidebar', 'Start from the guided panel inside Google Sheets'],
-        ['Connect Brevo', 'Use your Brevo API key for the workflow'],
-        ['Map Sheet columns', 'Connect reviewed row fields to Brevo records'],
-        ['Create tracking columns', 'Prepare status, error and timestamp fields'],
-        ['Run checks', 'Validate the setup before processing'],
-        ['Process ready rows', 'Create complete Brevo records from prepared rows'],
-        ['Review results and retry errors', 'Use row-level statuses to fix and retry failed rows'],
+        ['Prepare your Google Sheet', 'Use columns like email, name, company, phone, list, source or any Brevo field you need.'],
+        ['Map columns to Brevo fields', 'Connect each Sheet column to the right Brevo contact, company or list field.'],
+        ['Process the rows', 'RowsToCRM creates or updates contacts in Brevo and links them to the matching companies.'],
+        ['Track the result in the sheet', 'Each row gets a sync status, so you know what is done, skipped or needs review.'],
       ],
     },
     tracking: {
-      title: 'Before and after row-level tracking',
+      title: 'Track every row with sync statuses',
       subtitle:
-        'The sheet remains the operator workspace, but every processed row gains clear status, IDs, errors and timestamps.',
+        'The sheet remains the operator workspace. Each processed row can show READY, PROCESSING, DONE, ERROR or SKIPPED, plus IDs, errors and timestamps for review.',
       before: 'Before',
       beforeStatus: 'Raw spreadsheet with no tracking',
       after: 'After',
@@ -240,28 +239,28 @@ export const translations = {
       },
     },
     features: {
-      title: 'Everything you need for Brevo lead intake',
-      subtitle: 'Purpose-built capabilities that make Google Sheets a powerful lead processing system',
+      title: 'Google Sheets to Brevo integration, without extra scenario building',
+      subtitle: 'Practical tools for mapping columns, processing rows and reviewing sync results inside the spreadsheet',
       cards: [
-        ['spreadsheet-cell', 'Guided field mapping', 'Map Sheet columns to Brevo contact and company fields with a visual interface'],
-        ['list-assignment', 'Brevo list assignment', 'Automatically add contacts to configured Brevo lists during sync'],
-        ['contact-company-link', 'Company creation and linking', 'Create or update companies and link them to contacts automatically'],
-        ['spreadsheet-cell', 'Optional automation events', 'Trigger Brevo automations with custom events and properties'],
-        ['status-badge', 'Row-level sync status', 'Track READY, PROCESSING, DONE, ERROR, and SKIPPED states per row'],
-        ['retry-row', 'Error visibility and safe retry', 'See exactly what failed and retry individual rows without risk'],
-        ['status-badge', 'Setup and integration checks', 'Validate configuration and API connection before processing'],
-        ['sidebar-panel', 'Sidebar-based operation', 'Control everything from a dedicated panel inside Google Sheets'],
+        ['spreadsheet-cell', 'Column mapping for Brevo fields', 'Map Sheet columns to Brevo contact fields, company fields, list assignment and optional event properties'],
+        ['contact-company-link', 'Create or update Brevo contacts', 'Process mapped rows to create new contacts or update existing Brevo contacts from Google Sheets'],
+        ['contact-company-link', 'Automatic company linking', 'Use company data from the Sheet to create or match companies and link contacts to the right records'],
+        ['list-assignment', 'Brevo list assignment', 'Assign contacts to selected Brevo lists as part of the same sync workflow'],
+        ['spreadsheet-cell', 'Optional automation events', 'Send optional Brevo automation events with mapped event properties when your workflow needs them'],
+        ['status-badge', 'Row-level sync status', 'Track READY, PROCESSING, DONE, ERROR and SKIPPED states per row'],
+        ['retry-row', 'Safer review and retry', 'Review failed or skipped rows in the spreadsheet before retrying them'],
+        ['sidebar-panel', 'Sidebar-based operation', 'Control mapping, checks and row processing from a guided panel inside Google Sheets'],
       ],
     },
     audience: {
       title: "Who it's for",
-      subtitle: 'Teams and professionals who need to turn spreadsheet rows into structured Brevo leads',
+      subtitle: 'Brevo users who manage leads in Google Sheets and need contacts, companies, lists and sync status to stay connected',
       cards: [
-        ['B2B marketing teams', 'Manage lead intake from forms, campaigns and events with proper company data structure'],
-        ['Sales operations teams', 'Ensure partner leads and manual imports create complete CRM records in Brevo'],
-        ['Marketing agencies', 'Set up reliable lead workflows for clients without complex technical integration'],
-        ['Brevo consultants', 'Deliver turnkey lead intake setups that clients can operate independently'],
-        ['Event and webinar teams', 'Process registration lists into Brevo with company enrichment and automation triggers'],
+        ['B2B marketing teams', 'Process leads from forms, campaigns and events while keeping company data and list assignment organized'],
+        ['Sales operations teams', 'Create or update Brevo contacts from partner lists and manual imports with visible row status'],
+        ['Marketing agencies', 'Set up a practical Google Sheets Brevo sync for clients without asking operators to maintain scenarios'],
+        ['Brevo consultants', 'Configure mapped lead intake workflows that clients can run from Google Sheets'],
+        ['Event and webinar teams', 'Process registration lists into Brevo with company linking, list assignment and optional event triggers'],
       ],
       bestFit: {
         title: 'Best fit',
@@ -270,7 +269,7 @@ export const translations = {
           'Your leads arrive or are reviewed in Google Sheets.',
           'You need contacts and companies, not just email addresses.',
           'You want visible DONE / ERROR statuses per row.',
-          'Your marketing team should not maintain automation scenarios.',
+          'Your marketing team should not maintain complex automation scenarios.',
         ],
       },
       notFit: {
@@ -278,7 +277,7 @@ export const translations = {
         bullets: [
           'You only import a CSV once a year.',
           'You do not use Brevo.',
-          'You already have a stable Make or Zapier scenario maintained by a technical owner.',
+          'You already have a stable automation scenario maintained by a technical owner.',
           'You need a full two-way sync platform.',
         ],
       },
@@ -349,42 +348,45 @@ export const translations = {
       cta: 'Book a setup review',
     },
     faq: {
-      title: 'Frequently asked questions',
+      title: 'FAQ about Google Sheets and Brevo contact sync',
       items: [
         [
-          'Is RowsToCRM an official Google or Brevo product?',
-          'No. RowsToCRM is an independent product and is not affiliated with, endorsed by, or sponsored by Google or Brevo.',
+          'Does RowsToCRM create Brevo contacts from Google Sheets?',
+          'Yes. RowsToCRM processes mapped Google Sheets rows and creates or updates Brevo contacts using the fields you configure.',
         ],
         [
-          'Can RowsToCRM link Brevo contacts to companies?',
-          'Yes. RowsToCRM is designed to create or update Brevo companies and link contacts to companies as part of the same guided workflow.',
+          'Can RowsToCRM link contacts to companies in Brevo?',
+          'Yes. RowsToCRM can use company data from your Sheet to create or match companies and link contacts to the right company records in Brevo.',
         ],
         [
-          'How is this different from Zapier or Make?',
-          'Zapier and Make are general automation platforms. RowsToCRM is purpose-built for Brevo lead intake from Google Sheets, including contact-company linking, list assignment, row-level statuses and safe retry inside the Sheet.',
+          'Can I assign contacts to Brevo lists?',
+          'Yes. RowsToCRM can assign processed contacts to selected Brevo lists as part of the sync workflow.',
         ],
         [
-          'What is the difference between Self-Setup and Guided Setup?',
-          'Both packages use the same RowsToCRM workflow. Self-Setup is for teams that want to configure it independently using documentation. Guided Setup includes one-to-one installation, configuration support and training.',
+          'Is this the same as using Zapier or Make?',
+          'No. Zapier and Make are general automation tools. RowsToCRM is a focused Brevo lead intake workflow built around mapped spreadsheet rows, contact updates, company linking, list assignment and row-level sync status.',
         ],
         [
-          'Do I need technical skills?',
-          'For Self-Setup, you should be comfortable following technical instructions, configuring an API key and working with Google Sheets. Guided Setup is designed for teams that want one-to-one help with installation, configuration and training.',
+          'Do I need technical skills to use it?',
+          'RowsToCRM is designed for operators who work inside Google Sheets. The setup defines the column mapping once, then users can process structured rows without building automation scenarios.',
         ],
         [
           'What happens when a row fails?',
-          'The row is marked with an ERROR status and a useful message. After reviewing or correcting the issue, you can retry failed rows without reprocessing the whole sheet.',
+          'RowsToCRM writes a row-level status back to the sheet, so failed or skipped rows can be reviewed instead of disappearing inside an automation log.',
         ],
-        ['Can I process rows in bulk?', 'Yes. RowsToCRM is designed to process prepared rows from the Sheet while keeping row-level visibility on each result.'],
+        [
+          'Is RowsToCRM affiliated with Google or Brevo?',
+          'No. RowsToCRM is an independent tool and is not affiliated with Google or Brevo.',
+        ],
       ],
     },
     finalCta: {
-      title: 'Want to turn your spreadsheet into a Brevo lead intake workflow?',
-      subtitle: 'Book a 20-minute demo to see how RowsToCRM can streamline your lead processing workflow',
+      title: 'Want to process Google Sheets rows into Brevo contacts with company linking?',
+      subtitle: 'Book a 20-minute setup review to see how RowsToCRM can fit your Google Sheets Brevo sync.',
       stats: [
-        ['No workflows', 'Guided setup, not automation building'],
-        ['Full records', 'Contact + company + linking in one row'],
-        ['Clear status', 'Row-level tracking and error recovery'],
+        ['Mapped columns', 'Define the Google Sheets to Brevo field mapping once'],
+        ['Company linking', 'Create or update contacts and link them to companies'],
+        ['Clear status', 'Track row-level sync status and review errors'],
       ],
     },
     footer: {
@@ -417,7 +419,7 @@ export const translations = {
     },
     cta: {
       primary: 'Prenota una demo di 20 minuti',
-      secondary: 'Vedi i pacchetti di setup',
+      secondary: 'Vedi come funziona la sincronizzazione',
       bookDemo: 'Prenota una demo',
       fit: 'Verifica se RowsToCRM è adatto al tuo workflow',
       reviewWorkflow: 'Analizza il tuo workflow Brevo',
@@ -430,6 +432,8 @@ export const translations = {
       title: 'Crea contatti e aziende Brevo da Google Sheets, senza costruire workflow complessi',
       subtitle:
         'RowsToCRM trasforma righe controllate in Google Sheets in record Brevo completi: contatti, aziende, collegamenti contatto-azienda, assegnazioni a liste, eventi opzionali e stati di sincronizzazione per riga — tutto da una sidebar guidata in Google Sheets.',
+      microcopy:
+        'Pensato per utenti Brevo che gestiscono lead in Google Sheets e hanno bisogno di più controllo rispetto a uno scenario di automazione generico.',
       bullets: [
         'Contatto + azienda + collegamento in una sola riga',
         'Sidebar guidata dentro Google Sheets',

@@ -11,12 +11,27 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rowstocrm.com/create-brevo-contacts-from-google-sheets</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rowstocrm.com/brevo-contact-company-linking</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rowstocrm.com/brevo-lead-intake-workflow</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rowstocrm.com/zapier-make-alternative-for-brevo-sheets</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rowstocrm.com/google-sheets-brevo-agencies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
