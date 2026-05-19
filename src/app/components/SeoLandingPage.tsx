@@ -74,7 +74,11 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">{content.intro}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <BookingLink className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto">
+              <BookingLink
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto"
+                ctaLocation="seo_page_hero"
+                trackingEventName="seo_page_cta_click"
+              >
                 {content.cta.button}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </BookingLink>
@@ -182,7 +186,11 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
             <h2 className="text-2xl font-bold text-slate-950">{content.cta.title}</h2>
             <p className="mt-2 leading-relaxed text-slate-600">{content.cta.body}</p>
           </div>
-          <BookingLink className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto">
+          <BookingLink
+            className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto"
+            ctaLocation="seo_page_bottom"
+            trackingEventName="seo_page_cta_click"
+          >
             {content.cta.button}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </BookingLink>

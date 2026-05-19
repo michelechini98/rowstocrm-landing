@@ -49,7 +49,10 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSelect />
-          <BookingLink className="rounded-lg bg-[#446362] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#365251]">
+          <BookingLink
+            className="rounded-lg bg-[#446362] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#365251]"
+            ctaLocation="header_desktop"
+          >
             {t.nav.bookDemo}
           </BookingLink>
         </div>
@@ -66,7 +69,10 @@ export function Header() {
               <a className="text-sm font-medium text-slate-700" href="/#setup-package">{t.nav.setupPackage}</a>
               <a className="text-sm font-medium text-slate-700" href="/#faq">{t.nav.faq}</a>
               <LanguageSelect compact />
-              <BookingLink className="rounded-lg bg-[#446362] px-4 py-3 text-center text-sm font-semibold text-white">
+              <BookingLink
+                className="rounded-lg bg-[#446362] px-4 py-3 text-center text-sm font-semibold text-white"
+                ctaLocation="header_mobile"
+              >
                 {t.nav.bookDemo}
               </BookingLink>
             </div>

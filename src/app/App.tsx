@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
@@ -19,6 +20,8 @@ import { Seo } from './components/Seo';
 import { SeoLandingPage } from './components/SeoLandingPage';
 import { TermsAndConditions } from './components/TermsAndConditions';
 import { getSeoLandingPageByPath } from './seoLandingPages';
+import { translations } from '../i18n/translations';
+import { trackPageView, type PageType } from './lib/tracking';
 
 function LandingPage() {
   return (
@@ -51,6 +54,21 @@ export default function App() {
   const isPrivacyPage = pathname === '/privacy';
   const isTermsPage = pathname === '/terms';
   const seoLandingPage = getSeoLandingPageByPath(pathname);
+  const isNotFoundPage = !isHomePage && !isTermsPage && !isPrivacyPage && !isCookiePolicyPage && !seoLandingPage;
+  const pageType: PageType = isHomePage ? 'home' : seoLandingPage ? 'seo_landing' : isNotFoundPage ? 'not_found' : 'other';
+  const pageTitle = isHomePage
+    ? translations.en.seo.title
+    : isTermsPage
+      ? 'Termini e Condizioni | RowsToCRM'
+      : isPrivacyPage
+        ? 'Informativa Privacy | RowsToCRM'
+        : isCookiePolicyPage
+          ? 'Cookie Policy | RowsToCRM'
+          : seoLandingPage?.en.title || 'Page not found | RowsToCRM';
+
+  useEffect(() => {
+    trackPageView(pageType, pageTitle);
+  }, [pathname, pageTitle, pageType]);
 
   return (
     <div id="top" className="min-h-screen bg-white">

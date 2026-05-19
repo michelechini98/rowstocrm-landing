@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { contactEmail, demoBookingUrl, privacyEmail, siteUrl } from '../../config/links';
+import { trackEvent, trackLinkClick } from '../lib/tracking';
 
 type TermsSection = {
   title: string;
@@ -29,7 +30,17 @@ const termsSections: TermsSection[] = [
       'Il Titolare è [NOME COGNOME], con sede in Italia.',
       <>
         Per richieste generali puoi scrivere a{' '}
-        <a className={linkClass} href={`mailto:${contactEmail}`}>
+        <a
+          className={linkClass}
+          href={`mailto:${contactEmail}`}
+          onClick={() =>
+            trackEvent('contact_link_click', {
+              cta_href: `mailto:${contactEmail}`,
+              cta_location: 'terms_contact',
+              cta_text: contactEmail,
+            })
+          }
+        >
           {contactEmail}
         </a>
         . Per richieste privacy puoi scrivere a{' '}
@@ -52,7 +63,19 @@ const termsSections: TermsSection[] = [
     body: [
       <>
         Le demo possono essere prenotate tramite zcal all’indirizzo{' '}
-        <a className={linkClass} href={demoBookingUrl} rel="noopener noreferrer" target="_blank">
+        <a
+          className={linkClass}
+          href={demoBookingUrl}
+          onClick={() =>
+            trackLinkClick('demo_booking_click', {
+              cta_href: demoBookingUrl,
+              cta_location: 'terms_demo_link',
+              cta_text: demoBookingUrl,
+            })
+          }
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           {demoBookingUrl}
         </a>
         . La prenotazione non comporta automaticamente la conclusione di un contratto o l’obbligo di acquistare un servizio.

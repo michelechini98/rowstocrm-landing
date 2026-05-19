@@ -12,7 +12,10 @@ export function CtaStrip({ variant }: { variant: CtaStripVariant }) {
     <section className="bg-white px-4 py-8 sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 rounded-2xl border border-emerald-100 bg-emerald-50 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
         <p className="text-lg font-semibold text-slate-900">{content.title}</p>
-        <BookingLink className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto">
+        <BookingLink
+          className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto"
+          ctaLocation={`cta_strip_${variant}`}
+        >
           {content.cta}
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </BookingLink>
@@ -55,7 +58,10 @@ export function AfterDemo() {
       <div className="mx-auto max-w-5xl rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-8">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="text-3xl font-bold text-slate-950 sm:text-4xl">{t.afterDemo.title}</h2>
-          <BookingLink className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto">
+          <BookingLink
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto"
+            ctaLocation="after_demo"
+          >
             {t.afterDemo.cta}
           </BookingLink>
         </div>

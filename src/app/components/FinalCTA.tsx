@@ -1,5 +1,6 @@
 import { ArrowRight, Calendar } from 'lucide-react';
 import { useLanguage } from '../../i18n/useLanguage';
+import { trackEvent } from '../lib/tracking';
 import { BookingLink } from './BookingLink';
 
 export function FinalCTA() {
@@ -21,11 +22,24 @@ export function FinalCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <BookingLink className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-4 text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8">
+          <BookingLink
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-4 text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8"
+            ctaLocation="final_cta_primary"
+          >
             <span>{t.cta.primary}</span>
             <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </BookingLink>
-          <a href="#how-it-works" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-white px-6 py-4 text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8">
+          <a
+            href="#how-it-works"
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-white px-6 py-4 text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8"
+            onClick={() =>
+              trackEvent('secondary_cta_click', {
+                cta_href: '#how-it-works',
+                cta_location: 'final_cta_secondary',
+                cta_text: t.cta.secondary,
+              })
+            }
+          >
             {t.cta.secondary}
           </a>
         </div>
