@@ -13,16 +13,16 @@ const sections = [
   {
     title: '2. Cookie e local storage usati da RowsToCRM',
     body: [
-      'Al momento la landing page RowsToCRM non include script di analytics, advertising, retargeting o marketing tracking.',
-      'Il sito può usare local storage per salvare la preferenza lingua EN/IT e migliorare l’esperienza di navigazione senza richiedere un nuovo selettore a ogni visita.',
+      'Il sito può usare local storage per salvare la preferenza lingua EN/IT e le preferenze cookie, così da non richiedere una nuova scelta a ogni visita.',
       'Eventuali cookie tecnici possono essere usati solo per il corretto funzionamento, sicurezza, routing o pubblicazione del sito.',
+      'Strumenti opzionali di analytics o marketing possono essere attivati solo in base alle preferenze espresse tramite il banner cookie.',
     ],
   },
   {
     title: '3. Cookie banner',
     body: [
-      'Poiché non sono attivi cookie non essenziali, analytics o marketing tracking, non è stato implementato un cookie banner.',
-      'Se in futuro verranno aggiunti strumenti non essenziali, RowsToCRM aggiornerà questa policy e introdurrà, quando necessario, un meccanismo di consenso.',
+      'RowsToCRM mostra un banner cookie che permette di accettare tutti i cookie opzionali, rifiutare quelli non essenziali o personalizzare le preferenze.',
+      'Le preferenze possono essere modificate in qualsiasi momento tramite il link “Cookie settings” nel footer del sito.',
     ],
   },
   {
@@ -54,7 +54,7 @@ export function CookiePolicy() {
           <a className={linkClass} href={siteUrl}>
             {siteUrl}
           </a>
-          . Questa pagina descrive l’uso di cookie tecnici e local storage per funzionalità essenziali e preferenza lingua.
+          . Questa pagina descrive l’uso di cookie tecnici, local storage e preferenze per analytics o marketing opzionali.
         </p>
 
         <div className="space-y-8">

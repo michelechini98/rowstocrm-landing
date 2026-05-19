@@ -27,7 +27,7 @@ type TrackingPayload = {
 
 declare global {
   interface Window {
-    dataLayer?: Array<Record<string, unknown>>;
+    dataLayer?: unknown[];
   }
 }
 
@@ -108,5 +108,3 @@ export function trackLinkClick(
     trackEvent('outbound_link_click', payload);
   }
 }
-
-// TODO: Add a cookie banner/CMP that updates GTM consent before enabling analytics or ad tags that require consent.

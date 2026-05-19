@@ -14,6 +14,7 @@ import { FAQ } from './components/FAQ';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { NotFound } from './components/NotFound';
+import { CookieConsentBanner } from './components/CookieConsentBanner';
 import { CookiePolicy } from './components/CookiePolicy';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { Seo } from './components/Seo';
@@ -88,6 +89,7 @@ export default function App() {
         <NotFound />
       )}
       <Footer />
+      <CookieConsentBanner />
     </div>
   );
 }

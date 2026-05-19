@@ -2,6 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+<!-- Google Consent Mode v2 default consent -->
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+(function(){
+  var consent={
+    analytics_storage:'denied',
+    ad_storage:'denied',
+    ad_user_data:'denied',
+    ad_personalization:'denied',
+    functionality_storage:'granted',
+    security_storage:'granted'
+  };
+  try {
+    var stored=localStorage.getItem('rowstocrm_cookie_consent');
+    if (stored) {
+      var parsed=JSON.parse(stored);
+      if (parsed && parsed.consent_version===1) {
+        consent.analytics_storage=parsed.analytics?'granted':'denied';
+        consent.ad_storage=parsed.marketing?'granted':'denied';
+        consent.ad_user_data=parsed.marketing?'granted':'denied';
+        consent.ad_personalization=parsed.marketing?'granted':'denied';
+      }
+    }
+  } catch(e) {}
+  gtag('consent','default',consent);
+})();
+</script>
+<!-- End Google Consent Mode v2 default consent -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
