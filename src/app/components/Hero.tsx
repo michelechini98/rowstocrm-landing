@@ -1,5 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../../i18n/useLanguage';
+import { trackEvent } from '../lib/tracking';
 import { BookingLink } from './BookingLink';
 import { InteractiveProductMockup } from './InteractiveProductMockup';
 
@@ -24,10 +25,24 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <BookingLink className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-emerald-700 px-6 py-4 text-center text-white transition-colors hover:bg-emerald-800 sm:w-auto sm:px-8">
+              <BookingLink
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-emerald-700 px-6 py-4 text-center text-white transition-colors hover:bg-emerald-800 sm:w-auto sm:px-8"
+                ctaLocation="hero_primary"
+                trackingEventName="hero_cta_click"
+              >
                 {t.cta.primary}
               </BookingLink>
-              <a href="#how-it-works" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-emerald-700 px-6 py-4 text-center text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8">
+              <a
+                href="#how-it-works"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-2 border-emerald-700 px-6 py-4 text-center text-emerald-700 transition-colors hover:bg-emerald-50 sm:w-auto sm:px-8"
+                onClick={() =>
+                  trackEvent('secondary_cta_click', {
+                    cta_href: '#how-it-works',
+                    cta_location: 'hero_secondary',
+                    cta_text: t.cta.secondary,
+                  })
+                }
+              >
                 {t.cta.secondary}
               </a>
             </div>

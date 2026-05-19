@@ -19,7 +19,10 @@ export function NotFound() {
           >
             Back to homepage
           </a>
-          <BookingLink className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto">
+          <BookingLink
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#446362] px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-[#365251] sm:w-auto"
+            ctaLocation="not_found"
+          >
             Book a 20-minute setup review
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </BookingLink>

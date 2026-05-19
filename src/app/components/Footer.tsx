@@ -1,6 +1,7 @@
 import { contactEmail, cookiePolicyUrl, privacyUrl, termsUrl } from '../../config/links';
 import { useLanguage } from '../../i18n/useLanguage';
 import { seoLandingPageList } from '../seoLandingPages';
+import { trackEvent } from '../lib/tracking';
 import { BookingLink } from './BookingLink';
 
 export function Footer() {
@@ -29,7 +30,11 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li><BookingLink className="hover:text-white transition-colors">{t.nav.bookDemo}</BookingLink></li>
+              <li>
+                <BookingLink className="hover:text-white transition-colors" ctaLocation="footer_product_demo" trackingEventName="footer_cta_click">
+                  {t.nav.bookDemo}
+                </BookingLink>
+              </li>
             </ul>
           </div>
 
@@ -40,7 +45,21 @@ export function Footer() {
               <li><a href={termsUrl} className="hover:text-white transition-colors">{t.footer.terms}</a></li>
               <li><a href={privacyUrl} className="hover:text-white transition-colors">{t.footer.privacy}</a></li>
               <li><a href={cookiePolicyUrl} className="hover:text-white transition-colors">{t.footer.cookiePolicy}</a></li>
-              <li><a href={`mailto:${contactEmail}`} className="hover:text-white transition-colors">{t.footer.contact}</a></li>
+              <li>
+                <a
+                  href={`mailto:${contactEmail}`}
+                  className="hover:text-white transition-colors"
+                  onClick={() =>
+                    trackEvent('contact_link_click', {
+                      cta_href: `mailto:${contactEmail}`,
+                      cta_location: 'footer_contact',
+                      cta_text: t.footer.contact,
+                    })
+                  }
+                >
+                  {t.footer.contact}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

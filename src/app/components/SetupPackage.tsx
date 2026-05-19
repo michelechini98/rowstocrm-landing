@@ -59,9 +59,13 @@ export function SetupPackage() {
                 </p>
               )}
 
-              <BookingLink className={`mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg px-6 py-4 text-center font-semibold transition-colors ${
+              <BookingLink
+                className={`mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg px-6 py-4 text-center font-semibold transition-colors ${
                 index === 1 ? 'bg-[#446362] text-white hover:bg-[#365251]' : 'border-2 border-[#446362] text-[#446362] hover:bg-emerald-50'
-              }`}>
+              }`}
+                ctaLocation={index === 1 ? 'pricing_guided_setup' : 'pricing_self_setup'}
+                trackingEventName="pricing_cta_click"
+              >
                 {pkg.cta}
               </BookingLink>
             </div>
