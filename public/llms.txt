@@ -1,0 +1,26 @@
+# RowsToCRM
+
+RowsToCRM helps Brevo users create or update contacts from structured Google Sheets rows and link those contacts to companies automatically.
+
+## What it does
+
+RowsToCRM lets users map Google Sheets columns to Brevo fields, then process spreadsheet rows to create or update contacts, link contacts to companies, assign Brevo lists, optionally send automation events and write row-level sync status back to the sheet.
+
+## Best-fit use cases
+
+- Create Brevo contacts from Google Sheets
+- Update Brevo contacts from Google Sheets
+- Link Brevo contacts to companies from spreadsheet rows
+- Assign Brevo lists from mapped Sheet columns
+- Track row-level sync status in Google Sheets
+- Use a focused alternative to generic automation tools for Brevo lead intake
+
+## Core pages
+
+- https://rowstocrm.com/
+- https://rowstocrm.com/google-sheets-to-brevo
+- https://rowstocrm.com/create-brevo-contacts-from-google-sheets
+- https://rowstocrm.com/brevo-contact-company-linking
+- https://rowstocrm.com/brevo-lead-intake-workflow
+- https://rowstocrm.com/zapier-make-alternative-for-brevo-sheets
+- https://rowstocrm.com/google-sheets-brevo-agencies

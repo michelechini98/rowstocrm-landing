@@ -29,6 +29,39 @@ function setLink(rel: string, href: string, hreflang?: string) {
   element.href = href;
 }
 
+function setJsonLd(id: string, data: object | null) {
+  let element = document.head.querySelector<HTMLScriptElement>(`script[data-schema-id="${id}"]`);
+
+  if (!data) {
+    element?.remove();
+    return;
+  }
+
+  if (!element) {
+    element = document.createElement('script');
+    element.type = 'application/ld+json';
+    element.dataset.schemaId = id;
+    document.head.appendChild(element);
+  }
+
+  element.textContent = JSON.stringify(data);
+}
+
+function faqSchema(items: ReadonlyArray<readonly [string, string]>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map(([question, answer]) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
+}
+
 export function Seo() {
   const { language, t } = useLanguage();
 
@@ -86,6 +119,66 @@ export function Seo() {
     setLink('alternate', `${siteUrl}${pagePath || '/'}`, 'en');
     setLink('alternate', `${siteUrl}${pagePath || '/'}?lang=it`, 'it');
     setLink('alternate', `${siteUrl}${pagePath || '/'}`, 'x-default');
+    setJsonLd('organization', {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: 'RowsToCRM',
+      url: siteUrl,
+      logo: ogImageUrl,
+      description:
+        'RowsToCRM helps Brevo users create or update contacts from structured Google Sheets rows and link those contacts to companies automatically.',
+    });
+    setJsonLd('website', {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      name: 'RowsToCRM',
+      url: siteUrl,
+      inLanguage: 'en',
+      publisher: {
+        '@id': `${siteUrl}/#organization`,
+      },
+    });
+    setJsonLd('software-application', isNotFoundPage ? null : {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      '@id': `${siteUrl}/#software`,
+      name: 'RowsToCRM',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      url: canonicalUrl,
+      description,
+      publisher: {
+        '@id': `${siteUrl}/#organization`,
+      },
+      featureList: [
+        'Map Google Sheets columns to Brevo contact and company fields',
+        'Create or update Brevo contacts from Google Sheets',
+        'Link Brevo contacts to companies automatically',
+        'Assign Brevo lists from mapped Sheet columns',
+        'Write row-level sync status back to Google Sheets',
+      ],
+    });
+    setJsonLd('faq', isHomePage ? faqSchema(t.faq.items) : seoLandingPageMeta ? faqSchema(seoLandingPageMeta.faq) : null);
+    setJsonLd('breadcrumb', seoLandingPageMeta ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'RowsToCRM',
+          item: siteUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: seoLandingPageMeta.h1,
+          item: canonicalUrl,
+        },
+      ],
+    } : null);
     document.documentElement.lang = language;
   }, [language, t]);
 
