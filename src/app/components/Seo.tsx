@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { ogImageUrl, siteUrl } from '../../config/links';
 import { useLanguage } from '../../i18n/useLanguage';
-import { getSeoLandingPageByPath } from '../seoLandingPages';
+import { getSeoLandingPageByPath, normalizePathname } from '../seoLandingPages';
 
 function setMeta(name: string, content: string, attribute: 'name' | 'property' = 'name') {
   let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`);
@@ -66,7 +66,7 @@ export function Seo() {
   const { language, t } = useLanguage();
 
   useEffect(() => {
-    const pathname = window.location.pathname;
+    const pathname = normalizePathname(window.location.pathname);
     const isCookiePolicyPage = pathname === '/cookie-policy';
     const isHomePage = pathname === '/';
     const isPrivacyPage = pathname === '/privacy';

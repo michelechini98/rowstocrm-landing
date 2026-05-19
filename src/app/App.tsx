@@ -20,7 +20,7 @@ import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { Seo } from './components/Seo';
 import { SeoLandingPage } from './components/SeoLandingPage';
 import { TermsAndConditions } from './components/TermsAndConditions';
-import { getSeoLandingPageByPath } from './seoLandingPages';
+import { getSeoLandingPageByPath, normalizePathname } from './seoLandingPages';
 import { translations } from '../i18n/translations';
 import { trackPageView, type PageType } from './lib/tracking';
 
@@ -49,7 +49,7 @@ function LandingPage() {
 }
 
 export default function App() {
-  const pathname = window.location.pathname;
+  const pathname = normalizePathname(window.location.pathname);
   const isCookiePolicyPage = pathname === '/cookie-policy';
   const isHomePage = pathname === '/';
   const isPrivacyPage = pathname === '/privacy';

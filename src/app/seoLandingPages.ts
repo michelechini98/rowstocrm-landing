@@ -462,6 +462,11 @@ export const seoLandingPages: Record<SeoLandingPageKey, Record<Language, SeoLand
 
 export const seoLandingPageList = Object.values(seoLandingPages);
 
+export function normalizePathname(pathname: string) {
+  return pathname.replace(/\/+$/, '') || '/';
+}
+
 export function getSeoLandingPageByPath(pathname: string) {
-  return seoLandingPageList.find((page) => page.en.path === pathname);
+  const normalizedPathname = normalizePathname(pathname);
+  return seoLandingPageList.find((page) => page.en.path === normalizedPathname);
 }
