@@ -46,6 +46,15 @@ export function Footer() {
               <li><a href={privacyUrl} className="hover:text-white transition-colors">{t.footer.privacy}</a></li>
               <li><a href={cookiePolicyUrl} className="hover:text-white transition-colors">{t.footer.cookiePolicy}</a></li>
               <li>
+                <button
+                  className="text-left transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#446362] focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event('rowstocrm:open-cookie-preferences'))}
+                >
+                  Cookie settings
+                </button>
+              </li>
+              <li>
                 <a
                   href={`mailto:${contactEmail}`}
                   className="hover:text-white transition-colors"
