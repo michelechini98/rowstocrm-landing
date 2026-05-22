@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { DemoVideoSection } from './components/DemoVideoSection';
 import { Problem } from './components/Problem';
 import { Solution } from './components/Solution';
 import { Differentiation } from './components/Differentiation';
@@ -28,6 +29,7 @@ function LandingPage() {
   return (
     <>
       <Hero />
+      <DemoVideoSection />
       <Problem />
       <Differentiation />
       <CtaStrip variant="comparison" />
