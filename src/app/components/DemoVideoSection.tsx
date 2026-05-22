@@ -10,8 +10,8 @@ export function DemoVideoSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   return (
-    <section className="bg-white px-4 py-14 sm:px-6 sm:py-16" aria-labelledby="demo-video-title">
-      <div className="mx-auto max-w-6xl">
+    <section className="bg-white px-4 py-12 sm:px-6 sm:py-16" aria-labelledby="demo-video-title">
+      <div className="mx-auto w-full max-w-6xl min-w-0">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[#446362]">Product demo</p>
           <h2 id="demo-video-title" className="text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
@@ -23,17 +23,19 @@ export function DemoVideoSection() {
           </p>
         </div>
 
-        <div className="mx-auto mt-8 max-w-5xl rounded-3xl border border-emerald-100 bg-emerald-50/70 p-3 shadow-xl shadow-emerald-100/70 sm:mt-10 sm:p-5">
+        <div className="mx-auto mt-8 w-full max-w-5xl min-w-0 rounded-2xl border border-emerald-100 bg-emerald-50/70 p-2 shadow-xl shadow-emerald-100/70 sm:mt-10 sm:rounded-3xl sm:p-5">
           <div
-            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-emerald-100 bg-slate-950"
+            className="relative aspect-video w-full max-w-full overflow-hidden rounded-xl border border-emerald-100 bg-slate-950 sm:rounded-2xl"
             data-video-id={videoId}
             aria-label="RowsToCRM product demo video"
+            style={{ aspectRatio: '16 / 9' }}
           >
+            <div className="block w-full pb-[56.25%]" aria-hidden="true" />
             {isVideoLoaded ? (
               <iframe
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                className="absolute inset-0 h-full w-full"
+                className="absolute inset-0 h-full w-full border-0"
                 src={embedUrl}
                 title="RowsToCRM product demo video"
               />
