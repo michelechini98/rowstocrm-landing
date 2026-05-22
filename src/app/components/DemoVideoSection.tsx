@@ -10,7 +10,7 @@ export function DemoVideoSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   return (
-    <section className="bg-white px-4 py-12 sm:px-6 sm:py-16" aria-labelledby="demo-video-title">
+    <section id="product-demo" className="bg-white px-4 py-12 sm:px-6 sm:py-16" aria-labelledby="demo-video-title">
       <div className="mx-auto w-full max-w-6xl min-w-0">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[#446362]">Product demo</p>
